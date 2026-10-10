@@ -1,0 +1,22 @@
+{
+  "service": {
+    "button_label": "Bu hizmet için görüşelim",
+    "eyebrow": "Neler sunuyoruz",
+    "tabs_text": "Aşağıdaki başlıklardan birini seçin; o adımda ne yaptığımızı ve size ne kazandırdığını görün."
+  },
+  "service_steps": {
+    "eyebrow": "Süreç",
+    "heading": "Nasıl ilerliyoruz?",
+    "text": "Her şeyi bir anda değiştirmek yerine küçük ve ölçülebilir adımlarla ilerliyoruz.",
+    "items": [
+      { "title": "Keşif görüşmesi", "text": "Süreci dinliyor, bugün nasıl yürüdüğünü ve nerede tıkandığını birlikte çıkarıyoruz." },
+      { "title": "Yol haritası", "text": "Kapsamı, takvimi ve ölçeceğimiz hedefi netleştirip net bir teklif sunuyoruz." },
+      { "title": "İlk sürüm", "text": "Dar ve ölçülebilir bir ilk sürümü, mevcut sistemlerinizle çalışır halde yayına alıyoruz." },
+      { "title": "İzleme ve geliştirme", "text": "Sistemi izliyor, ölçüyor ve işe yarayanı diğer süreçlerinize genişletiyoruz." }
+    ]
+  },
+  "service_others": {
+    "heading": "Diğer hizmetler",
+    "text": "İhtiyacınız birden fazla alana dokunuyorsa diğer hizmetlerimize de göz atın."
+  }
+}

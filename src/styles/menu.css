@@ -1,0 +1,184 @@
+/* SITE BAR — no background of its own. Each side takes light or dark lettering from the
+   section behind it (set by the component); over the open menu both are light. */
+.site-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+    pointer-events: none;
+}
+@media (min-width: 768px) { .site-bar { padding: 24px 48px; } }
+.site-bar__side { color: #fff; pointer-events: auto; transition: color 0.35s ease; }
+.site-bar__side[data-on="light"] { color: #0b0f14; }
+.menu-is-open .site-bar__side { color: #fff; }
+.site-bar__brand { display: inline-flex; align-items: center; gap: 8px; }
+@media (min-width: 768px) { .site-bar__brand { gap: 12px; } }
+.site-bar__wordmark { transition: filter 0.35s ease; }
+.site-bar__side[data-on="light"] .site-bar__wordmark { filter: brightness(0); }
+.menu-is-open .site-bar__side .site-bar__wordmark { filter: none; }
+.site-bar__contact {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+    border-radius: 9999px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+@media (min-width: 768px) { .site-bar__contact { gap: 8px; padding: 10px 20px; font-size: 14px; } }
+.site-bar__contact:active { border-color: color-mix(in srgb, currentColor 50%, transparent); background: color-mix(in srgb, currentColor 11%, transparent); }
+@media (hover: hover) {
+    .site-bar__contact:hover { border-color: color-mix(in srgb, currentColor 50%, transparent); background: color-mix(in srgb, currentColor 11%, transparent); }
+}
+/* The narrowest phones have no room for the arrow beside the brand */
+@media (max-width: 359px) {
+    .site-bar__contact { padding: 8px 10px; }
+    .site-bar__contact svg { display: none; }
+}
+
+.menu-toggle { display: flex; align-items: center; gap: 12px; color: inherit; user-select: none; }
+.menu-toggle:focus-visible { outline: none; }
+.menu-toggle:focus-visible .menu-toggle__icon { box-shadow: 0 0 0 2px currentColor; }
+/* "Menü" slides up and out as "Kapat" slides in from below */
+.menu-toggle__label {
+    display: none;
+    justify-items: end;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+@media (min-width: 640px) { .menu-toggle__label { display: grid; } }
+.menu-open .menu-toggle__label { opacity: 1; }
+.menu-toggle__label span {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+    transition: transform 0.52s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.52s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.menu-toggle__label span:last-child { transform: translateY(14px); opacity: 0; }
+.menu-open .menu-toggle__label span:first-child { transform: translateY(-14px); opacity: 0; }
+.menu-open .menu-toggle__label span:last-child { transform: none; opacity: 1; }
+/* Two lines in a disc; the lower one is short until hovered. Open: they meet and cross */
+.menu-toggle__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0 11px;
+    border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    border-radius: 9999px;
+    background: color-mix(in srgb, currentColor 7%, transparent);
+    transition: background-color 0.35s ease;
+}
+.menu-toggle:active .menu-toggle__icon, .menu-open .menu-toggle__icon { background: color-mix(in srgb, currentColor 14%, transparent); }
+.menu-toggle__icon span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.52s cubic-bezier(0.65, 0, 0.35, 1), width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.menu-toggle__icon span:last-child { width: 11px; }
+.menu-toggle:active .menu-toggle__icon span:last-child, .menu-open .menu-toggle__icon span:last-child { width: 18px; }
+/* Hovering is kept to screens with a pointer; after a tap it would stay stuck on */
+@media (hover: hover) {
+    .menu-toggle:hover .menu-toggle__label { opacity: 1; }
+    .menu-toggle:hover .menu-toggle__icon { background: color-mix(in srgb, currentColor 14%, transparent); }
+    .menu-toggle:hover .menu-toggle__icon span:last-child { width: 18px; }
+}
+.menu-open .menu-toggle__icon span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.menu-open .menu-toggle__icon span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+/* MENU OVERLAY — dark sheet over a flowing backdrop, opening in a circle from the toggle */
+.menu-overlay {
+    --menu-radius: 0vmax;
+    --menu-x: 100%;
+    --menu-y: 0px;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 110px 24px 32px;
+    background: #05070a;
+    color: #f8fafc;
+    clip-path: circle(var(--menu-radius) at var(--menu-x) var(--menu-y));
+    scrollbar-width: none;
+}
+.menu-overlay::-webkit-scrollbar { display: none; }
+@media (min-width: 768px) { .menu-overlay { padding: 130px 48px 40px; } }
+.menu-overlay__body {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    /* Lifts the links and the contact block off the bottom edge */
+    padding-bottom: clamp(16px, 9vh, 110px);
+}
+@media (min-width: 768px) { .menu-overlay__body { flex-direction: row; align-items: flex-end; } }
+.menu-overlay__links { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(4px, 1.2vh, 14px); }
+.menu-link-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 20px;
+    font-size: clamp(1.75rem, 6.4vh, 4.25rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+    color: #f8fafc;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+.menu-link-item__number { width: 2.2em; font-size: 0.26em; font-weight: 500; letter-spacing: 0.04em; color: rgba(203, 213, 225, 0.5); }
+/* Pointing at a link nudges it forward and dims the others */
+.menu-overlay__links .menu-link-item:focus-visible, .menu-overlay__links .menu-link-item:active { opacity: 1; transform: translateX(16px); }
+@media (hover: hover) {
+    .menu-overlay__links:hover .menu-link-item { opacity: 0.35; }
+    .menu-overlay__links .menu-link-item:hover { opacity: 1; transform: translateX(16px); }
+}
+.menu-link-item:focus-visible, .menu-overlay__contact:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 6px; }
+
+.menu-overlay__info { display: flex; flex-direction: column; gap: 32px; }
+@media (min-width: 768px) { .menu-overlay__info { align-items: flex-end; text-align: right; } }
+.menu-overlay__caption { display: block; margin-bottom: 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(203, 213, 225, 0.5); }
+.menu-overlay__contact { position: relative; display: block; width: fit-content; }
+@media (min-width: 768px) { .menu-overlay__contact { margin-left: auto; } }
+.menu-overlay__underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.menu-overlay__contact:hover .menu-overlay__underline, .menu-overlay__contact:focus-visible .menu-overlay__underline { transform: scaleX(1); }
+.menu-overlay__note { position: relative; width: 100%; max-width: 80rem; margin: 32px auto 0; font-size: 13px; color: rgba(203, 213, 225, 0.45); }
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-toggle__label span, .menu-toggle__icon span, .menu-link-item, .menu-overlay__underline { transition: none; }
+}
+

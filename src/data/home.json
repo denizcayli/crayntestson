@@ -1,0 +1,180 @@
+{
+  "hero": {
+    "heading": "Şirketlere Özel|Üretken Yapay Zeka|Yazılımları",
+    "strong": "Özel, Üretken, Yazılımları",
+    "kicker": "Crayn AI, modern işletmeler için özel AI agent'lar, otomasyon sistemleri ve ölçeklenebilir üretken yapay zeka yazılımları geliştiren yerli bir yazılım şirketidir.",
+    "primary_label": "Sistemi Planlayalım",
+    "primary_href": "/talep",
+    "secondary_label": "Çözümleri Keşfet",
+    "secondary_href": "/#solutions"
+  },
+  "diagnostic": {
+    "heading": "Sistem Nerede|Devreye Girer?",
+    "text": "Her şirketin ihtiyacı, verisi ve operasyon yapısı farklıdır. Crayn AI, hazır kalıplar yerine kronik problemlere mühendislik odaklı çözümler üretir.",
+    "items": [
+      {
+        "label": "VERİ",
+        "title": "Dağınık veri ve ölçümlenemeyen yapılar.",
+        "text": "İşletmeniz müşteri görüşmelerinden veri topluyor ancak bunu merkezi ve takip edilebilir bir yapıya dönüştüremiyorsa sistem tıkanır.",
+        "image": "/assets/photos/1526628953301-3e589a6a8b74-2000.webp"
+      },
+      {
+        "label": "OPERASYON",
+        "title": "Manuel iş yükü ve yavaş karar alma.",
+        "text": "Şirket içi koordinasyonu manuel tablolarla yürütmeye çalışmak, operasyonel hızı düşürür ve hata payını artırır.",
+        "image": "/assets/photos/1454165804606-c3d57bc86b40-2000.webp"
+      },
+      {
+        "label": "SATIŞ",
+        "title": "Takip edilemeyen potansiyel süreçler.",
+        "text": "Satış süreçlerinde lead'leri doğru yönetememek, gelire doğrudan yansıyan en büyük operasyonel eksikliktir.",
+        "image": "/assets/photos/1596526131083-e8c633c948d2-2000.webp"
+      },
+      {
+        "label": "ÇÖZÜM MİMARİSİ",
+        "title": "Modüler AI ajanları, otomasyon ve özel yazılım.",
+        "text": "Crayn AI, bu problemleri modüler AI ajanları, otomasyon ve özel yazılım gücüyle çözer.",
+        "image": "/assets/photos/1518770660439-4636190af475-2000.webp"
+      }
+    ]
+  },
+  "services": {
+    "heading": "Hizmetler",
+    "text": "Yapay zeka odaklı dönüşümden, özel yazılım çözümlerine kadar işletmenizin ihtiyaç duyduğu tüm dijital katmanları inşa ediyoruz."
+  },
+  "solutions": {
+    "heading": "Neler Yapıyoruz?",
+    "text": "Yapay zekanın ve otomasyonun sınırlarını zorlayarak işletmenizi geleceğe taşıyan otonom sistemler ve kullanıcı merkezli deneyimler tasarlıyoruz.",
+    "items": [
+      {
+        "title": "AI Agent Geliştirme",
+        "text": "Şirketinize özel, otonom kararlar alabilen, veri okuyup aksiyona geçen yapay zeka personelleri inşa ediyoruz.",
+        "image": "/assets/photos/1674027444485-cec3da58eef4-1200.webp"
+      },
+      {
+        "title": "AI Chatbox Sistemleri",
+        "text": "Müşterilerinizi tanıyan, lead'leri toplayıp CRM'inize doğrudan bağlayan akıllı iletişim sistemleri.",
+        "image": "/assets/photos/1577563908411-5077b6dc7624-1200.webp"
+      },
+      {
+        "title": "Otomasyon & Orkestrasyon",
+        "text": "İş akışlarını ve API bağlantılarını hatasız, insansız ve otonom bir şekilde çalıştıran altyapılar.",
+        "image": "/assets/photos/1537462715879-360eeb61a0ad-1200.webp"
+      },
+      {
+        "title": "Karar Destek Sistemleri",
+        "text": "Saha ve CRM verilerini yöneticilerin anlık okuyabileceği akıllı analitik tablolara dönüştürürüz.",
+        "image": "/assets/photos/1542744094-3a31f272c490-1200.webp"
+      },
+      {
+        "title": "Kurumsal Entegrasyon",
+        "text": "Operasyon departmanları arası bilgi kopukluğunu yapay zeka entegrasyonuyla ortadan kaldırıyoruz.",
+        "image": "/assets/photos/1544197150-b99a580bb7a8-1200.webp"
+      },
+      {
+        "title": "Üretken Çözümler",
+        "text": "Tamamen işletmenize özel LLM modelleri ve güvenlik duvarlarıyla örülü akıllı yazılım mimarileri kuruyoruz.",
+        "image": "/assets/photos/1526374965328-7f61d4dc18c5-1200.webp"
+      }
+    ]
+  },
+  "references": {
+    "heading": "Referanslar.",
+    "text": "Her iş birliği bizim için güvene, iletişime ve yaratıcı fikirlere dayanan değerli bir yolculuk.",
+    "card_brand": "Crayn AI.",
+    "card_title": "Şirketlere özel üretken yapay zeka yazılımları",
+    "card_caption": "Müşteri yorumları",
+    "items": [
+      {
+        "text": "Crayn AI ile çalışmaya başladığımızda operasyonel süreçlerimiz çok daha karmaşıktı. Geliştirdikleri özel AI agent sistemi, satış ekibimizin verimliliğini %60 artırdı. Modüler yapıları ve hızlı entegrasyon kabiliyetleri bizi gerçekten etkiledi.",
+        "name": "Ayşe Kaya",
+        "role": "Chief Technology Officer, TechVision A.Ş.",
+        "image": "/assets/photos/1573496359142-b8d87734a5a2-200.webp"
+      },
+      {
+        "text": "Crayn AI ekibinin uzmanlığı ve çözüm odaklı yaklaşımı, e-ticaret altyapımızı tamamen dönüştürdü. Yapay zeka destekli karar destek sistemleri sayesinde stok yönetimimiz artık otonom çalışıyor. Kesinlikle tavsiye ederim.",
+        "name": "Mehmet Demir",
+        "role": "Head of Digital, GlobalRetail",
+        "image": "/assets/photos/1560250097-0b93528c311a-200.webp"
+      },
+      {
+        "text": "Lojistik sektöründe Crayn AI ile hayata geçirdiğimiz otomasyon sistemi, departmanlar arası koordinasyonu tamamen değiştirdi. Artık veriler anlık akıyor ve yöneticilerimiz çok daha hızlı karar alabiliyor. Süreç boyunca destekleri mükemmeldi.",
+        "name": "Zeynep Arslan",
+        "role": "Operations Manager, LogiCorp",
+        "image": "/assets/photos/1580489944761-15a19d654956-200.webp"
+      },
+      {
+        "text": "Crayn AI'ın geliştirdiği AI chatbot sistemi, müşteri hizmetleri maliyetlerimizi yarı yarıya düşürdü. Sistemin öğrenme kapasitesi ve doğruluk oranı beklentilerimizin çok üzerinde. Hazır şablon kullanmama yaklaşımları gerçekten fark yaratıyor.",
+        "name": "Can Yıldız",
+        "role": "CEO, StartupHub",
+        "image": "/assets/photos/1507003211169-0a1dd7228f2d-200.webp"
+      }
+    ]
+  },
+  "about": {
+    "slogans": [
+      {
+        "text": "Hazır kalıp değil,|işinize özel zeka."
+      },
+      {
+        "text": "Yerli akıl.|Size özel sistem."
+      },
+      {
+        "text": "Sizin verinizle düşünen,|sizin işinize göre çalışan."
+      }
+    ],
+    "text_1": "Crayn AI, yapay zekayı vitrine koyan değil, işin tam ortasına yerleştiren yerli bir yazılım şirketidir. Creodive'ın yıllara dayanan saha deneyiminden, kullanıcı deneyimi, veri analizi ve yazılım geliştirme birikiminden doğdu.",
+    "text_2": "Kurduğumuz sistemler birer teknik araç değil; şirketinizin gerçek iş akışına uyan, kullanılabilir ve ölçeklenebilir yazılım altyapılarıdır.",
+    "items": [
+      {
+        "title": "Hazır Kalıp Yok",
+        "text": "Her sistemi sizin verinize, sürecinize ve hedefinize göre sıfırdan kurgularız."
+      },
+      {
+        "title": "Gerçek İş Akışına Uyum",
+        "text": "Teknik bir gösteri değil; ekibinizin her gün gerçekten kullandığı çözümler."
+      },
+      {
+        "title": "Sizinle Büyüyen Mimari",
+        "text": "Artan veri ve operasyon yükünü taşıyan, ölçeklenebilir sağlam altyapı."
+      }
+    ]
+  },
+  "blog": {
+    "heading": "İçerikler",
+    "text": "Yapay zeka, yazılım ve dijital dönüşüm üzerine en güncel yazılarımız.",
+    "button_label": "Tüm İçerikler",
+    "button_href": "/icerikler"
+  },
+  "cta": {
+    "heading": "Sıkça Sorulan Sorular",
+    "typed": "Bilmeniz gereken her şey...",
+    "note": "Aradığınızı bulamadınız mı? Bize yazın:",
+    "items": [
+      {
+        "title": "Başlamak için elimizde ne olması gerekiyor?",
+        "text": "Hazır bir veri altyapısı ya da teknik ekip şart değil. Çözmek istediğiniz bir süreç ve o sürecin bugün nasıl yürüdüğünü anlatabilecek bir kişi yeterli; gerisini keşif görüşmesinde birlikte çıkarıyoruz."
+      },
+      {
+        "title": "Bir proje ne kadar sürer?",
+        "text": "Kapsama göre değişir. Her şeyi bir anda değiştirmek yerine dar ve ölçülebilir bir ilk sürümle başlamayı öneriyoruz; süreyi ve takvimi yol haritasında birlikte netleştiriyoruz."
+      },
+      {
+        "title": "Mevcut sistemlerimizle çalışır mı?",
+        "text": "Evet. Amacımız kullandığınız araçları değiştirmek değil, birbirine bağlamak. CRM, ERP, e-posta ve tablolarınızla; API'si olanlarla doğrudan, olmayanlarla ara çözümler üzerinden entegre oluyoruz."
+      },
+      {
+        "title": "Verilerimiz nasıl korunuyor?",
+        "text": "Verinin nerede tutulacağı, kimlerin erişeceği ve hangi modellerin kullanılacağı proje başında sizinle birlikte belirlenir. Verileriniz yalnızca sizin projeniz için kullanılır."
+      },
+      {
+        "title": "Maliyet nasıl belirleniyor?",
+        "text": "Kapsama, entegrasyon sayısına ve sürecin karmaşıklığına göre. Keşif görüşmesinden sonra yol haritasıyla birlikte net bir teklif sunuyoruz."
+      },
+      {
+        "title": "Yayına aldıktan sonra destek veriyor musunuz?",
+        "text": "Evet. Sistemi izlemeye, ölçmeye ve iyileştirmeye devam ediyoruz; işe yarayan çözümü diğer süreçlerinize birlikte genişletiyoruz."
+      }
+    ]
+  }
+}

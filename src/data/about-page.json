@@ -1,0 +1,34 @@
+{
+  "about_page": {
+    "heading": "Hakkımızda",
+    "items": [
+      {
+        "id": "hakkimizda",
+        "title": "Hakkımızda",
+        "text": "Crayn AI; modern işletmeler için özel AI agent'lar, otomasyon sistemleri ve ölçeklenebilir üretken yapay zeka yazılımları geliştiren yerli bir yazılım şirketidir. Kocaeli'de, Bilişim Vadisi'nde çalışıyoruz.\nHer şirketin ihtiyacı, verisi ve operasyon yapısı farklıdır. Bu yüzden hazır kalıplar satmıyoruz: önce süreci dinliyor, nerede tıkandığını ölçüyor; sonra o sürece özel, mevcut sistemlerinizle birlikte çalışan bir çözüm kuruyoruz.\nBir çözümün değerini, ekibinizin gününden kaç saati geri verdiğiyle ve kararlarınızı ne kadar hızlandırdığıyla ölçüyoruz.",
+        "image": "/assets/photos/1600880292203-757bb62b4baf-1600.webp"
+      },
+      {
+        "id": "vizyon",
+        "title": "Vizyon",
+        "text": "Yapay zekanın yalnızca büyük teknoloji şirketlerinin değil, her ölçekteki işletmenin günlük işinin doğal bir parçası olduğu bir gelecek hayal ediyoruz.\nBu gelecekte ekipler tekrarlayan işlere değil, karar vermeye ve üretmeye zaman ayırıyor; veriler departmanlar arasında kendiliğinden akıyor ve sorular günler sonra değil, anında yanıt buluyor.\nHedefimiz bu dönüşümde şirketlerin güvenle başvurduğu çözüm ortağı olmak ve Türkiye'den, kendi alanında örnek gösterilen işler üretmek.",
+        "image": "/assets/photos/1677442136019-21780ecad995-1600.webp"
+      },
+      {
+        "id": "misyon",
+        "title": "Misyon",
+        "text": "Ekiplerin zamanını tüketen manuel işleri otomatikleştiriyor, dağınık veriyi tek bir doğruya bağlıyor ve satıştan operasyona kadar süreçleri izlenebilir hale getiriyoruz.\nKüçük ve ölçülebilir adımlarla ilerliyoruz: önce çalışan bir ilk sürüm, sonra kanıtlanmış olanı diğer süreçlere yaymak.\nKurduğumuz her sistemde geri alınamayan kararlarda son söz ekibinizde kalır, sistemin ne yaptığını görebilirsiniz ve kullandığınız araçları değiştirmeniz gerekmez. İşimiz teslimle bitmez; çözümleri izlemeye ve geliştirmeye devam ederiz.",
+        "image": "/assets/photos/1547658719-da2b51169166-1600.webp"
+      },
+      {
+        "id": "iletisim",
+        "title": "İletişim",
+        "text": "Aklınızdaki süreci birkaç cümleyle anlatmanız yeterli; teknik bir hazırlık yapmanıza gerek yok. İlk görüşmede ihtiyacınızı dinliyor ve nereden başlanabileceğini birlikte netleştiriyoruz.",
+        "contact": "evet",
+        "link": "/talep",
+        "link_label": "Talep formunu doldurun →",
+        "image": "/assets/photos/1521791136064-7986c2920216-1600.webp"
+      }
+    ]
+  }
+}

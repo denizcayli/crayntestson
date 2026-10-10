@@ -1,0 +1,136 @@
+/* MULLION — numbered list beside a framed picture; the current row takes the frame's colour and
+   joins it */
+.mullion {
+    --mullion-canvas: #f8fafc;
+    --mullion-ink: #0b0f14;
+    --mullion-mat: #e2e8f0;
+    --mullion-row: 22px;
+    --mullion-frame: 28px;
+    display: flex;
+    min-height: min(720px, 80vh);
+    overflow: hidden;
+    border-radius: var(--mullion-frame);
+    background: var(--mullion-canvas);
+    color: var(--mullion-ink);
+}
+.mullion__list {
+    display: flex;
+    flex: 0 0 44%;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: calc(var(--mullion-frame) + var(--mullion-row)) 0;
+}
+.mullion__row {
+    position: relative;
+    padding: 22px 28px;
+    border-radius: var(--mullion-row) 0 0 var(--mullion-row);
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.45s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+.mullion__row[aria-selected="true"] { background: var(--mullion-mat); }
+.mullion__row:focus-visible { outline: 2px solid var(--mullion-ink); outline-offset: -2px; }
+/* Rounded notches above and below the current row, where it meets the frame */
+.mullion__row::before, .mullion__row::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: var(--mullion-row);
+    height: var(--mullion-row);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+}
+.mullion__row::before { top: calc(var(--mullion-row) * -1); background: radial-gradient(circle at 0 0, transparent calc(var(--mullion-row) - 0.5px), var(--mullion-mat) var(--mullion-row)); }
+.mullion__row::after { bottom: calc(var(--mullion-row) * -1); background: radial-gradient(circle at 0 100%, transparent calc(var(--mullion-row) - 0.5px), var(--mullion-mat) var(--mullion-row)); }
+.mullion__row[aria-selected="true"]::before, .mullion__row[aria-selected="true"]::after { opacity: 1; }
+
+.mullion__head { display: flex; align-items: baseline; gap: 20px; }
+.mullion__number { flex: none; font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; opacity: 0.3; transition: opacity 0.4s ease; }
+.mullion__title {
+    flex: 1;
+    min-width: 0;
+    font-size: clamp(24px, 2.4vw, 34px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    opacity: 0.3;
+    transform: translateX(-2px);
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.mullion__row[aria-selected="true"] :is(.mullion__number, .mullion__title) { opacity: 1; transform: none; }
+/* Round arrow: tilted and hollow at rest, filled and level on the current row */
+.mullion__arrow {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(11, 15, 20, 0.12);
+    border-radius: 9999px;
+    opacity: 0.6;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, opacity 0.4s ease, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.mullion__arrow svg { width: 42%; height: 42%; transform: rotate(-45deg); transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.mullion__row[aria-selected="true"] .mullion__arrow { border-color: var(--mullion-ink); background: var(--mullion-ink); color: var(--mullion-canvas); opacity: 1; }
+.mullion__row[aria-selected="true"] .mullion__arrow svg { transform: none; }
+a.mullion__arrow:hover { transform: scale(1.06); }
+
+.mullion__caption { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.55s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.mullion__row[aria-selected="true"] .mullion__caption { grid-template-rows: 1fr; }
+.mullion__caption > div {
+    min-height: 0;
+    overflow: hidden;
+    max-width: 540px;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: rgba(11, 15, 20, 0.66);
+    opacity: 0;
+    transition: opacity 0.45s ease 0.08s;
+}
+.mullion__row[aria-selected="true"] .mullion__caption > div { opacity: 1; }
+.mullion__caption > div > :first-child { padding-top: 10px; }
+.mullion__caption p + p { margin-top: 10px; }
+
+/* Time left before the list moves on by itself */
+.mullion__timer { position: absolute; left: 28px; right: 28px; bottom: 8px; height: 2px; overflow: hidden; border-radius: 2px; pointer-events: none; }
+.mullion__timer span { display: block; width: 100%; height: 100%; background: var(--mullion-ink); transform: scaleX(0); transform-origin: left center; }
+
+.mullion__frame { position: relative; flex: 1 1 0; min-width: 0; padding: 12px; border-radius: var(--mullion-frame); background: var(--mullion-mat); }
+.mullion__view { position: relative; height: 100%; overflow: hidden; isolation: isolate; border-radius: calc(var(--mullion-frame) - 12px); background: var(--mullion-mat); }
+.mullion__slide { position: absolute; inset: 0; z-index: 1; transition: clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1); }
+.mullion__slide[data-place="0"] { z-index: 2; clip-path: inset(0% 0% 0% 0%); }
+.mullion__slide[data-place="-1"] { clip-path: inset(0% 0% 100% 0%); }
+.mullion__slide[data-place="1"] { clip-path: inset(100% 0% 0% 0%); }
+.mullion__slide img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.14); transition: transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.mullion__slide[data-place="0"] img { transform: none; }
+.mullion__scrim { position: absolute; inset: 0; z-index: 3; background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 50%); pointer-events: none; }
+.mullion__plate { position: absolute; left: 32px; right: 32px; bottom: 32px; z-index: 4; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; color: #fff; pointer-events: none; }
+.mullion__plate-title { font-size: clamp(32px, 4.4vw, 64px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.05; animation: mullion-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.mullion__counter { flex: none; font-size: 13px; font-variant-numeric: tabular-nums; opacity: 0.85; }
+@keyframes mullion-rise {
+    from { opacity: 0; transform: translateY(38%); }
+}
+
+/* Used as a whole page: no rounded outline, a full screen tall, clear of the top bar */
+.mullion--page { min-height: 100vh; border-radius: 0; }
+.mullion--page .mullion__list { padding-top: 110px; }
+.mullion--page .mullion__frame { margin: 12px 12px 12px 0; }
+
+/* Narrow screens: the picture on top, the list under it */
+@media (max-width: 767px) {
+    .mullion { flex-direction: column-reverse; min-height: 0; }
+    .mullion__list { flex: none; padding: 12px 0 20px; }
+    .mullion__row { padding: 18px 20px; border-radius: 0; }
+    .mullion__row::before, .mullion__row::after { display: none; }
+    .mullion__timer { left: 20px; right: 20px; }
+    .mullion__frame { flex: none; height: 320px; }
+    .mullion--page .mullion__list { padding-top: 12px; }
+    .mullion--page .mullion__frame { margin: 88px 12px 0; }
+    .mullion__plate { left: 20px; right: 20px; bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mullion *, .mullion *::before, .mullion *::after { transition: none; animation: none; }
+}

@@ -1,0 +1,263 @@
+:root {
+            --bg-color: #030303;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --border-color: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Arka Plan Izgarası */
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(circle at center, black, transparent 90%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 90%);
+        }
+
+        /* Manyetik Buton */
+        .magnetic-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #000000;
+            padding: 1.15rem 2.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s;
+            border: none;
+            outline: none;
+        }
+        .magnetic-btn:hover { background: #e0e0e0; }
+        .magnetic-btn-dark { background: transparent; color: #ffffff; border: 1px solid #333; }
+        .magnetic-btn-dark:hover { background: #111; }
+
+        /* Başlangıç Animasyon Durumları */
+        .hero-title-word { display: inline-block; opacity: 0; transform: translateY(40px); }
+        .hero-fade { opacity: 0; transform: translateY(20px); }
+
+        /* Rozet Animasyonu (Infinitely Rotating) */
+        .mxd-rotate {
+            animation: rotate-slow 15s linear infinite;
+        }
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hero Devasa Arka Plan Marquee */
+        .hero-giant-marquee {
+            animation: marquee-fast var(--marquee-speed, 100s) linear infinite;
+        }
+        @keyframes marquee-fast {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Interactive Parallax / Floating Center Piece Wrapper */
+        .centerpiece-wrapper {
+            perspective: 1000px;
+        }
+        .centerpiece-inner {
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease-out;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        /* Marquee Item */
+        .marquee__item {
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.05em 0.4em;
+            flex-shrink: 0;
+        }
+        .marquee__item .marquee__text {
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Metin Seçim Rengi */
+        ::selection { background: #f5b700; color: #000000; }
+        ::-moz-selection { background: #f5b700; color: #000000; }
+
+        /* Referanslar - Testimonial Kart */
+        .testi-card {
+            background: #0d0d0d;
+            border: 1px solid #1e1e1e;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 100%;
+            transition: border-color 0.3s ease;
+        }
+        .testi-card:hover { border-color: #333; }
+        .testi-card__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .testi-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 9999px;
+            object-fit: cover;
+            border: 2px solid #2a2a2a;
+        }
+        .testi-logo-wrap { display: flex; align-items: center; }
+        .testi-company-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #555;
+            border: 1px solid #222;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+        }
+        .testi-text p {
+            color: #aaa;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        .testi-author { margin-top: auto; }
+        .testi-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 0.25rem;
+        }
+        .testi-position {
+            font-size: 0.875rem;
+            color: #555;
+            margin: 0;
+        }
+        /* Aktif olmayan kartlar blur */
+        .testi-swiper .swiper-slide:not(.swiper-slide-active) .testi-card {
+            filter: blur(3px);
+            opacity: 0.35;
+            transition: filter 0.4s ease, opacity 0.4s ease;
+        }
+        .testi-swiper .swiper-slide-active .testi-card {
+            filter: none;
+            opacity: 1;
+        }
+        /* Nav Butonları */
+        .testi-nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 9999px;
+            border: 1px solid #333;
+            background: transparent;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .testi-nav-btn:hover { background: #1a1a1a; border-color: #555; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* STACKING SECTION STİLLERİ - KARTLAR ÜST ÜSTE BİNER */
+        .stack-container {
+            position: relative;
+            padding-bottom: 100px;
+        }
+        .stack-card {
+            position: sticky;
+            border-radius: 2.5rem;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.8);
+            transition: transform 0.3s ease;
+        }
+
+        /* Kademeli Yapışma Yükseklikleri */
+        .stack-card:nth-child(1) { top: 100px; z-index: 1; }
+        .stack-card:nth-child(2) { top: 120px; z-index: 2; }
+        .stack-card:nth-child(3) { top: 140px; z-index: 3; }
+        .stack-card:nth-child(4) { top: 160px; z-index: 4; }
+        .stack-card:nth-child(5) { top: 180px; z-index: 5; }
+        .stack-card:nth-child(6) { top: 200px; z-index: 6; }
+
+        /* Menü Stilleri */
+        .menu-link-item {
+            color: #9ca3af;
+            transition: all 0.4s ease;
+            display: inline-block;
+            font-weight: 800;
+        }
+        .menu-link-item:hover {
+            color: #ffffff;
+            transform: translateX(20px);
+        }
+
+        .hamburger-line { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; }
+        .menu-open .line-1 { transform: translateY(6px) rotate(45deg); }
+        .menu-open .line-2 { opacity: 0; }
+        .menu-open .line-3 { transform: translateY(-6px) rotate(-45deg); }
+
+        /* SWIPE SLIDER ÖZEL KART ESTETİĞİ */
+        .service-el {
+            --service-expo-height: 90px;
+            background: rgba(108, 53, 178, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background-color 0.45s ease, border-color 0.45s ease;
+        }
+        .service-el:hover {
+            background: rgba(108, 53, 178, 0.08);
+            border-color: rgba(108, 53, 178, 0.3);
+        }
+        /* Hover durumunda içeriğin yukarı süzülmesi */
+        .service-el .icon-wrapper,
+        .service-el .title,
+        .service-el .expo {
+            transform: translateY(var(--service-expo-height));
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease;
+        }
+        .service-el:hover .icon-wrapper,
+        .service-el:hover .title,
+        .service-el:hover .expo {
+            transform: translateY(0);
+        }
+        .service-el:hover .expo {
+            opacity: 1 !important;
+        }
+        /* Hover durumunda sağ üstte beliren küre animasyonu */
+        .service-el .image-sphere {
+            transform: translate(40%, -40%) scale(0.7);
+            opacity: 0.1;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+        }
+        .service-el:hover .image-sphere {
+            transform: translate(15%, -15%) scale(1);
+            opacity: 0.35;
+        }

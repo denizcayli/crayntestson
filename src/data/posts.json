@@ -1,0 +1,136 @@
+[
+  {
+    "slug": "ai-agent-nedir",
+    "title": "AI Agent Nedir? İşletmeler İçin Pratik Bir Rehber",
+    "category": "AI Ajanları",
+    "date": "2026-09-28",
+    "dateLabel": "28 Eyl 2026",
+    "readTime": "5 dk okuma",
+    "image": "/assets/photos/1677442136019-21780ecad995-1600.webp",
+    "excerpt": "Sohbet robotundan farkı ne, hangi işleri devralabilir ve ilk ajanınızı nerede denemelisiniz? Teknik jargona girmeden, bir işletme sahibinin bilmesi gerekenler.",
+    "body": [
+      "AI agent, yalnızca soruya cevap veren bir sohbet robotu değildir. Kendisine verilen hedefe ulaşmak için adımları kendi planlar, şirketinizin araçlarını kullanır ve sonucu size raporlar. Bir sohbet robotu \"iade politikamız şudur\" der; bir ajan iadeyi başlatır, kargo kodunu oluşturur ve müşteriye bilgi verir.",
+      {
+        "h": "Hangi işleri devralabilir?"
+      },
+      "Ajanlar en çok, kuralları belli ama insan dikkati gerektiren tekrarlı işlerde değer üretir:",
+      {
+        "list": [
+          "Gelen talepleri okuyup doğru ekibe, doğru öncelikle yönlendirmek",
+          "Tekliften faturaya kadar belge hazırlamak ve kontrol etmek",
+          "CRM, ERP ve e-posta arasında veri taşımak, eksikleri tamamlamak",
+          "Müşteri sorularını şirket bilgi tabanına dayanarak yanıtlamak"
+        ]
+      },
+      {
+        "h": "İlk ajanı nerede denemeli?"
+      },
+      "En iyi başlangıç noktası, sık tekrarlanan, hatası kolay fark edilen ve sonucu ölçülebilen tek bir süreçtir. Ajanı önce bir insanın onayıyla çalıştırın; kararlarına güvendikçe onay adımlarını azaltın. Küçük başlayıp ölçerek büyütmek, her şeyi bir anda otomatikleştirmeye çalışmaktan çok daha hızlı sonuç verir."
+    ]
+  },
+  {
+    "slug": "surec-otomasyonuna-nereden-baslanir",
+    "title": "Süreç Otomasyonuna Nereden Başlanır?",
+    "category": "Otomasyon",
+    "date": "2026-09-14",
+    "dateLabel": "14 Eyl 2026",
+    "readTime": "4 dk okuma",
+    "image": "/assets/photos/1586528116311-ad8dd3c8310d-1600.webp",
+    "excerpt": "Her şeyi otomatikleştirmeye çalışmak en sık yapılan hatadır. Doğru ilk süreci seçmek için üç basit ölçüt ve uygulanabilir bir yol haritası.",
+    "body": [
+      "Otomasyon projelerinin çoğu teknoloji yüzünden değil, yanlış süreçle başlandığı için tıkanır. En karmaşık ve en politik süreci ilk hedef seçmek, ekibin motivasyonunu ve bütçeyi daha ilk ayda tüketir.",
+      {
+        "h": "Doğru süreci seçmek için üç ölçüt"
+      },
+      {
+        "list": [
+          "Sıklık: Haftada en az birkaç kez tekrarlanıyor mu?",
+          "Kural netliği: Adımlar bir sayfaya yazılabilecek kadar belirgin mi?",
+          "Ölçülebilirlik: Bugün ne kadar sürdüğünü ve ne kadar hata çıktığını biliyor musunuz?"
+        ]
+      },
+      "Üçüne de \"evet\" diyebildiğiniz süreç, ilk adayınızdır. Sipariş girişi, fatura eşleştirme ve haftalık raporlama çoğu şirkette bu tanıma uyar.",
+      {
+        "h": "Önce sadeleştir, sonra otomatikleştir"
+      },
+      "Kötü tasarlanmış bir süreci otomatikleştirmek, yalnızca hatayı hızlandırır. Süreci önce kâğıt üzerinde çizin, gereksiz onayları ve çift veri girişlerini kaldırın, sonra otomasyona geçin. İlk sürümü dört ila altı haftada canlıya almayı hedefleyin; kazanımı ölçtükten sonra bir sonraki sürece geçin."
+    ]
+  },
+  {
+    "slug": "daginik-veriyi-karara-donusturmek",
+    "title": "Dağınık Veriyi Karar Alınabilir Hale Getirmek",
+    "category": "Veri & Analitik",
+    "date": "2026-08-30",
+    "dateLabel": "30 Ağu 2026",
+    "readTime": "5 dk okuma",
+    "image": "/assets/photos/1551288049-bebda4e38f71-1600.webp",
+    "excerpt": "Veriniz var ama karar verirken hala sezgiye mi dayanıyorsunuz? Excel dosyaları, CRM ve WhatsApp'a dağılmış bilgiyi tek bir doğruya dönüştürmenin yolu.",
+    "body": [
+      "Çoğu şirketin sorunu veri eksikliği değil, verinin dağınıklığıdır. Satış rakamları bir tabloda, müşteri görüşmeleri telefonlarda, stok bilgisi başka bir programda durur. Yönetici bir soru sorduğunda cevap günler sonra ve çoğu zaman birbiriyle çelişen rakamlarla gelir.",
+      {
+        "h": "Tek doğru kaynağı kurmak"
+      },
+      "İlk adım dev bir veri ambarı kurmak değildir. Önce en çok sorulan beş iş sorusunu yazın: bu ay hangi ürün kâr ettirdi, hangi müşteri kaybedilmek üzere, hangi teklif neden bekliyor. Sonra yalnızca bu soruları cevaplayan verileri tek bir yerde birleştirin.",
+      {
+        "h": "Yapay zekanın buradaki rolü"
+      },
+      "Üretken yapay zeka, yapılandırılmamış veriyi kullanılabilir kılar: görüşme notlarından talep çıkarır, e-postaları sınıflandırır, serbest metinle yazılmış kayıtları standart alanlara dönüştürür. Böylece bugüne kadar raporlara giremeyen bilgi de karar sürecine katılır.",
+      "Hedef daha fazla grafik değil, daha hızlı ve tutarlı karardır. Bir panelin başarısı, toplantılarda \"bu rakam doğru mu?\" sorusunun ne kadar az sorulduğuyla ölçülür."
+    ]
+  },
+  {
+    "slug": "hazir-yazilim-mi-ozel-yazilim-mi",
+    "title": "Hazır Yazılım mı, Özel Yazılım mı?",
+    "category": "Özel Yazılım",
+    "date": "2026-08-12",
+    "dateLabel": "12 Ağu 2026",
+    "readTime": "4 dk okuma",
+    "image": "/assets/photos/1555949963-aa79dcee981c-1600.webp",
+    "excerpt": "Hazır paketler hızlı başlatır, özel yazılım tam oturur. Hangi durumda hangisinin mantıklı olduğunu belirleyen dört soru.",
+    "body": [
+      "Hazır yazılım mı alınmalı, yoksa işletmeye özel mi geliştirilmeli? Bu sorunun tek bir doğru cevabı yok; ama doğru soruları sorduğunuzda karar çoğu zaman kendiliğinden netleşir.",
+      {
+        "h": "Karar vermeden önce dört soru"
+      },
+      {
+        "list": [
+          "Bu süreç sizi rakiplerinizden ayırıyor mu, yoksa herkesin aynı şekilde yaptığı bir iş mi?",
+          "Hazır ürüne uymak için işinizi ne kadar değiştirmeniz gerekecek?",
+          "Mevcut sistemlerinizle konuşabiliyor mu, yoksa elle veri mi taşıyacaksınız?",
+          "Kullanıcı sayınız arttıkça lisans maliyeti nereye gidiyor?"
+        ]
+      },
+      {
+        "h": "Pratik kural"
+      },
+      "Muhasebe, e-posta ve bordro gibi standart işler için hazır ürün neredeyse her zaman doğru seçimdir. Sizi farklı kılan süreçlerde, yani teklif hazırlama biçiminizde, üretim planlamanızda ya da müşteri deneyiminizde özel yazılım kendini geri öder.",
+      "Çoğu şirket için en sağlıklı mimari ikisinin karışımıdır: standart işler hazır ürünlerde kalır, özel yazılım bunları birbirine bağlar ve aradaki boşluğu doldurur."
+    ]
+  },
+  {
+    "slug": "llm-entegrasyonunda-5-hata",
+    "title": "LLM Entegrasyonunda Sık Yapılan 5 Hata",
+    "category": "Üretken Yapay Zeka",
+    "date": "2026-07-24",
+    "dateLabel": "24 Tem 2026",
+    "readTime": "6 dk okuma",
+    "image": "/assets/photos/1620712943543-bcc4688e7485-1600.webp",
+    "excerpt": "Demo harika çalışıyor ama canlıda işler karışıyor. Dil modellerini ürüne entegre ederken en sık karşılaştığımız beş hata ve bunlardan kaçınmanın yolları.",
+    "body": [
+      "Bir dil modeliyle etkileyici bir demo hazırlamak birkaç gün sürer. Aynı sistemi gerçek kullanıcılarla, gerçek verilerle ve tutarlı kaliteyle çalıştırmak ise bambaşka bir iştir. Aradaki farkı çoğunlukla şu beş hata belirler.",
+      {
+        "list": [
+          "Ölçmeden yayına almak: Başarıyı tanımlayan bir test seti olmadan yapılan her değişiklik bir tahmindir.",
+          "Modele şirket bilgisini vermemek: Model sizin ürünlerinizi ve kurallarınızı bilemez; doğru belgeleri doğru anda önüne koymanız gerekir.",
+          "Her işi tek bir dev prompt ile çözmeye çalışmak: Görevi küçük, denetlenebilir adımlara bölmek hem kaliteyi hem hata ayıklamayı kolaylaştırır.",
+          "İnsan onayını tasarıma katmamak: Geri alınamayan işlemlerde son sözü bir insan söylemelidir.",
+          "Maliyet ve gecikmeyi sona bırakmak: Model seçimi ve önbellekleme, ürün tasarımının bir parçasıdır."
+        ]
+      },
+      {
+        "h": "Nereden başlamalı?"
+      },
+      "Önce küçük bir değerlendirme seti hazırlayın: gerçek örneklerden oluşan yirmi otuz soru ve beklenen cevaplar. Bu set, hangi değişikliğin işe yaradığını tartışma konusu olmaktan çıkarır ve ekibin güvenle ilerlemesini sağlar."
+    ]
+  }
+]

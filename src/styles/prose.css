@@ -1,0 +1,12 @@
+.prose-crayn { color:#d1d5db; }
+.prose-crayn h1,.prose-crayn h2,.prose-crayn h3,.prose-crayn h4 { color:#fff; }
+.prose-crayn a { color:#7da3ff; text-decoration:underline; }
+.prose-crayn strong { color:#fff; }
+.prose-crayn img { border-radius:0.75rem; max-width:100%; height:auto; }
+.prose-crayn blockquote { border-left:3px solid #7da3ff; padding-left:1rem; color:#9ca3af; font-style:italic; }
+.prose-crayn ul,.prose-crayn ol { padding-left:1.25rem; }
+.prose-crayn ul { list-style:disc; } .prose-crayn ol { list-style:decimal; }
+/* Posts written in the panel arrive as plain HTML: the same sizes the built-in blocks get. */
+.prose-crayn--html h2 { font-size:1.5rem; line-height:2rem; font-weight:700; padding-top:1.25rem; }
+@media (min-width:768px) { .prose-crayn--html h2 { font-size:1.875rem; line-height:2.25rem; } }
+.prose-crayn--html li + li { margin-top:0.5rem; }

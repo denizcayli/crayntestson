@@ -1,0 +1,73 @@
+{
+  "lists": {
+    "hizmet": {
+      "tab": "1. Adım",
+      "label": "Hizmet seçenekleri",
+      "items": "Üretken Yapay Zeka Çözümleri | Süreç Otomasyonu | Veri & Analitik | Özel Yazılım Geliştirme | Danışmanlık | Diğer"
+    },
+    "butce": {
+      "tab": "2. Adım",
+      "label": "Bütçe seçenekleri",
+      "items": "100.000 ₺ altı | 100.000 – 500.000 ₺ | 500.000 – 1.000.000 ₺ | 1.000.000 ₺ üzeri | Henüz net değil"
+    },
+    "zaman": {
+      "tab": "2. Adım",
+      "label": "Zamanlama seçenekleri",
+      "items": "Hemen | 1-3 ay içinde | 3-6 ay içinde | Sadece araştırıyorum"
+    },
+    "sektor": {
+      "tab": "3. Adım",
+      "label": "Sektör seçenekleri",
+      "items": "Üretim / Sanayi | E-ticaret / Perakende | Finans / Bankacılık | Sağlık | Teknoloji / Yazılım | Eğitim | Diğer"
+    },
+    "olcek": {
+      "tab": "3. Adım",
+      "label": "Çalışan sayısı seçenekleri",
+      "items": "1-10 | 11-50 | 51-200 | 200+"
+    }
+  },
+  "labels": {
+    "Talep Formu": "Üst yazı",
+    "Projenizi birlikte planlayalım": "Sayfa başlığı",
+    "Hizmet": "1. adımın kısa adı",
+    "Talebiniz alındı!": "Teşekkür ekranı: başlık",
+    "Talebiniz alındı! Ekibimiz en kısa sürede sizinle iletişime geçecek.": "Teşekkür ekranı: metin",
+    "← Ana sayfaya dön": "Teşekkür ekranı: bağlantı",
+    "Bu alan zorunludur.": "Zorunlu alan uyarısı",
+    "İlgilendiğiniz Hizmet": "Adım başlığı",
+    "Size nasıl yardımcı olabiliriz?": "Adım açıklaması",
+    "Hangi konuda destek istiyorsunuz?": "Hizmet sorusu",
+    "Proje": "2. adımın kısa adı",
+    "Proje Detayları": "Adım başlığı",
+    "Bütçe, zaman çizelgesi ve kapsam.": "Adım açıklaması",
+    "Tahmini Bütçe": "Bütçe sorusu",
+    "Bütçe aralığı seçin": "Bütçe: seçim yapılmadan görünen yazı",
+    "Zaman Çizelgesi": "Zamanlama sorusu",
+    "Ne zaman başlamak istersiniz?": "Zamanlama: seçim yapılmadan görünen yazı",
+    "Projenizi kısaca anlatın": "Açıklama sorusu",
+    "İhtiyaçlarınızı ve hedeflerinizi birkaç cümleyle paylaşın...": "Açıklama: kutunun içindeki ipucu",
+    "Şirket": "3. adımın kısa adı",
+    "Şirket Bilgileri": "Adım başlığı",
+    "Sizi biraz tanıyalım.": "Adım açıklaması",
+    "Firma Adı": "Firma adı sorusu",
+    "Şirketinizin adı": "Firma adı: kutunun içindeki ipucu",
+    "Sektör": "Sektör sorusu",
+    "Sektör seçin": "Sektör: seçim yapılmadan görünen yazı",
+    "Çalışan Sayısı": "Çalışan sayısı sorusu",
+    "Şirket ölçeği": "Çalışan sayısı: seçim yapılmadan görünen yazı",
+    "İletişim": "4. adımın kısa adı",
+    "İletişim Bilgileri": "Adım başlığı",
+    "Size nasıl ulaşalım?": "Adım açıklaması",
+    "Ad Soyad": "Ad soyad sorusu",
+    "Adınız ve soyadınız": "Ad soyad: kutunun içindeki ipucu",
+    "E-posta": "E-posta sorusu",
+    "ornek@firma.com": "E-posta: kutunun içindeki ipucu",
+    "Telefon": "Telefon sorusu",
+    "+90 5XX XXX XX XX": "Telefon: kutunun içindeki ipucu",
+    "Kişisel verilerimin işlenmesine ilişkin aydınlatma metnini okudum ve onaylıyorum.": "Onay kutusunun yazısı",
+    "Geri": "Geri düğmesi",
+    "Devam et": "İleri düğmesi",
+    "Talebi Gönder": "Gönder düğmesi",
+    "Seçiniz": "Eklenen seçim listelerinde, seçim yapılmadan görünen yazı"
+  }
+}

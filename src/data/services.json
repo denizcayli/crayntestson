@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "web-cozumleri",
+    "label": "ÇÖZÜMLER",
+    "title": "Web Çözümleri",
+    "lead": "Estetik tasarımı güçlü bir kullanıcı deneyimiyle birleştiriyoruz. Tasarımdan geliştirmeye kadar tüm süreçlerde, markanızın dijital dünyada daha görünür, etkili ve akılda kalıcı olmasını sağlıyoruz.",
+    "tags": "UI/UX, Tasarım, Landing Page, Yazılım, Hosting",
+    "card_image": "/assets/photos/1547658719-da2b51169166-1600.webp",
+    "card_color": "#191919",
+    "features": [
+      {
+        "icon": "layout",
+        "title": "UI/UX Tasarım",
+        "summary": "Kullanıcının yolunu önce kağıt üzerinde netleştiririz.",
+        "heading": "Önce akış, sonra arayüz",
+        "points": "Ziyaretçinin sayfada ne aradığını ve nerede takıldığını çıkarırız\nTel kafes taslaklarla yapıyı tasarımdan önce birlikte onaylarız\nMarka kimliğinize uyan, tutarlı bir arayüz dili kurarız\nTelefon, tablet ve masaüstü için ayrı ayrı düşünülmüş ekranlar",
+        "image": "/assets/photos/1586717791821-3f44a563fa4c-1600.webp"
+      },
+      {
+        "icon": "window",
+        "title": "Landing Page & Kurumsal Site",
+        "summary": "Tek bir hedefe odaklanan sayfalar ve kurumsal siteler.",
+        "heading": "Ziyaretçiyi talebe taşıyan sayfalar",
+        "points": "Her sayfa tek bir net çağrıya göre kurgulanır\nMetin, görsel ve hareket aynı mesajı taşır\nHızlı açılan, arama motorlarının rahat okuduğu yapı\nİçeriği kendi ekibinizin güncelleyebileceği düzen",
+        "image": "/assets/photos/1559028012-481c04fa702d-1600.webp"
+      },
+      {
+        "icon": "server",
+        "title": "Geliştirme & Hosting",
+        "summary": "Tasarımı çalışan, hızlı ve güvenli bir siteye çeviririz.",
+        "heading": "Yayına alır, ayakta tutarız",
+        "points": "Tasarıma birebir sadık, temiz ve bakımı kolay kod\nForm, CRM ve analitik araçlarınızla entegrasyon\nBarındırma, alan adı ve SSL kurulumu tek elden\nYayın sonrası izleme, güncelleme ve destek",
+        "image": "/assets/photos/1547658719-da2b51169166-1600.webp"
+      }
+    ]
+  },
+  {
+    "slug": "dijital-pazarlama",
+    "label": "STRATEJİ",
+    "title": "Dijital Pazarlama",
+    "lead": "Doğru hedef kitleye, doğru kanalda ve etkili bir mesajla ulaşmanız için dijital pazarlama süreçlerinizi stratejik bir yaklaşımla yönetiyoruz. Veri odaklı planlama ve yaratıcı içeriklerle markanızın dijital performansını güçlendiriyoruz.",
+    "tags": "SEO, GEO, Google Ads ( SEM ), Performans Pazarlama",
+    "card_image": "/assets/photos/1460925895917-afdab827c52f-1600.webp",
+    "card_color": "#b01c68",
+    "features": [
+      {
+        "icon": "search",
+        "title": "SEO & GEO",
+        "summary": "Arama motorlarında ve yapay zeka yanıtlarında görünürlük.",
+        "heading": "Arandığınız yerde bulunun",
+        "points": "Teknik altyapı, içerik ve bağlantı yapısının denetimi\nMüşterinizin gerçekten sorduğu sorulara göre içerik planı\nYapay zeka asistanlarının yanıtlarında yer almak için GEO çalışması\nSıralama ve trafik değişimlerinin düzenli raporu",
+        "image": "/assets/photos/1560472354-b33ff0c44a43-1600.webp"
+      },
+      {
+        "icon": "target",
+        "title": "Google Ads",
+        "summary": "Arama anında, doğru kelimede, ölçülebilir reklam.",
+        "heading": "Bütçeyi sonuca bağlayın",
+        "points": "Anahtar kelime ve rakip araştırmasıyla kampanya kurulumu\nReklam metni ve açılış sayfasının birlikte ele alınması\nDönüşüm takibinin doğru kurulması\nHarcamanın düzenli olarak verimli kelimelere kaydırılması",
+        "image": "/assets/photos/1460925895917-afdab827c52f-1600.webp"
+      },
+      {
+        "icon": "chart",
+        "title": "Performans Pazarlama",
+        "summary": "Kanalları tek tabloda görün, neyin işe yaradığını bilin.",
+        "heading": "Tahminle değil, veriyle karar",
+        "points": "Tüm kanalların tek bir ölçüm yapısında toplanması\nHangi kanalın hangi talebi getirdiğinin izlenmesi\nDeneme, ölçme ve işe yarayanı büyütme döngüsü\nYöneticiler için sade, düzenli performans raporu",
+        "image": "/assets/photos/1504868584819-f8e8b4b6d7e3-1600.webp"
+      }
+    ]
+  },
+  {
+    "slug": "kreatif-icerik",
+    "label": "YARATICILIK",
+    "title": "Kreatif & İçerik",
+    "lead": "Markanızın hikayesini doğru ton, güçlü fikir ve yaratıcı içeriklerle anlatıyoruz. Hedef kitlenizin ilgisini çeken, marka kimliğinizi yansıtan ve dijitalde etki yaratan içeriklerle iletişiminizi güçlendiriyoruz.",
+    "tags": "Marka Kimliği, Video & Fotoğraf, Grafik Tasarım",
+    "card_image": "/assets/photos/1561070791-2526d30994b5-1600.webp",
+    "card_color": "#2e1065",
+    "features": [
+      {
+        "icon": "spark",
+        "title": "Marka Kimliği",
+        "summary": "Logo, renk, yazı ve ses tonu tek bir bütün olarak.",
+        "heading": "Her yerde aynı marka",
+        "points": "Markanın ne söylediğini ve kime söylediğini netleştiririz\nLogo, renk paleti ve tipografi sistemi\nYazılı ve görsel dilde tutarlı bir ton\nEkibinizin kullanabileceği sade bir marka kılavuzu",
+        "image": "/assets/photos/1541462608143-67571c6738dd-1600.webp"
+      },
+      {
+        "icon": "video",
+        "title": "Video & Fotoğraf",
+        "summary": "Fikirden kurguya, markanıza özel görsel üretim.",
+        "heading": "Anlatmak yerine gösterin",
+        "points": "Senaryo ve çekim planının birlikte hazırlanması\nÜrün, ekip ve mekan çekimleri\nKurgu, renk ve ses düzenlemesi\nHer kanalın ölçüsüne uygun ayrı sürümler",
+        "image": "/assets/photos/1574717024653-61fd2cf4d44d-1600.webp"
+      },
+      {
+        "icon": "pen",
+        "title": "Grafik Tasarım",
+        "summary": "Sunumdan sosyal medya görseline, tutarlı tasarım.",
+        "heading": "Göze çarpan, markaya sadık",
+        "points": "Sosyal medya, reklam ve kampanya görselleri\nSunum, katalog ve basılı işler\nTekrar kullanılabilir şablon setleri\nMarka kılavuzuna uyumun her işte korunması",
+        "image": "/assets/photos/1572044162444-ad60f128bdea-1600.webp"
+      }
+    ]
+  },
+  {
+    "slug": "sosyal-medya",
+    "label": "ETKİLEŞİM",
+    "title": "Sosyal Medya",
+    "lead": "Markanızın sosyal medyada görünür, anlaşılır ve akılda kalıcı olmasını sağlıyoruz. Hedef kitlenize uygun stratejiler ve yaratıcı içeriklerle etkileşimi güçlendiren, sürdürülebilir bir sosyal medya yönetimi sunuyoruz.",
+    "tags": "Topluluk Yönetimi, Kreatif İçerik, SM Reklamları",
+    "card_image": "/assets/photos/1573152143286-0c422b4d2175-1600.webp",
+    "card_color": "#0a2540",
+    "features": [
+      {
+        "icon": "users",
+        "title": "Topluluk Yönetimi",
+        "summary": "Yorumlar ve mesajlar yanıtsız kalmaz.",
+        "heading": "Takipçiyle konuşan marka",
+        "points": "Yorum ve mesajların düzenli takibi ve yanıtlanması\nMarkanın ses tonuna uygun hazır yanıt çerçevesi\nŞikayet ve taleplerin ilgili ekibe aktarılması\nTopluluktan gelen geri bildirimlerin raporlanması",
+        "image": "/assets/photos/1573152143286-0c422b4d2175-1600.webp"
+      },
+      {
+        "icon": "image",
+        "title": "Kreatif İçerik",
+        "summary": "Aylık plan, özgün görsel ve metin üretimi.",
+        "heading": "Planlı, düzenli, özgün",
+        "points": "Hedef kitleye göre aylık içerik takvimi\nHer platformun diline uygun görsel ve video\nPaylaşım öncesi onay akışı\nHangi içeriğin ilgi gördüğünün ölçülmesi",
+        "image": "/assets/photos/1611162616305-c69b3fa7fbe0-1600.webp"
+      },
+      {
+        "icon": "megaphone",
+        "title": "SM Reklamları",
+        "summary": "Doğru kitleye, doğru görselle ulaşan reklamlar.",
+        "heading": "Erişimi talebe çevirin",
+        "points": "Hedef kitle tanımı ve kampanya kurgusu\nReklam görseli ve metninin birlikte üretilmesi\nFarklı sürümlerin denenmesi ve karşılaştırılması\nBütçe ve sonuçların anlaşılır raporu",
+        "image": "/assets/photos/1579869847557-1f67382cc158-1600.webp"
+      }
+    ]
+  },
+  {
+    "slug": "ai-danismanligi",
+    "label": "GELECEK",
+    "title": "AI Danışmanlığı",
+    "lead": "Şirketlerin iş akışlarını analiz ederek süreçleri üretken yapay zeka entegrasyonu, akıllı yapay zeka ajanları ve otonom iş akışı orkestrasyonları ile geleceğe taşıyoruz.",
+    "tags": "AI Agent, LLM Entegrasyonu, Otomasyon",
+    "card_image": "/assets/photos/1655720828018-edd2daec9349-1600.webp",
+    "card_color": "#1e1b4b",
+    "features": [
+      {
+        "icon": "bot",
+        "title": "AI Agent",
+        "summary": "Veri okuyan, karar öneren ve aksiyon alan ajanlar.",
+        "heading": "İşi yapan dijital ekip arkadaşı",
+        "points": "Ajanın üstleneceği sürecin birlikte seçilmesi\nŞirket verinize ve araçlarınıza bağlı çalışma\nGeri alınamayan kararlarda son söz ekibinizde\nAjanın ne yaptığını izleyebileceğiniz kayıtlar",
+        "image": "/assets/photos/1674027444485-cec3da58eef4-1600.webp"
+      },
+      {
+        "icon": "link",
+        "title": "LLM Entegrasyonu",
+        "summary": "Dil modellerini mevcut sistemlerinize bağlarız.",
+        "heading": "Kullandığınız araçların içinde yapay zeka",
+        "points": "İhtiyaca uygun modelin seçilmesi\nCRM, ERP ve iç dokümanlarınızla bağlantı\nVerinin nerede tutulacağının baştan belirlenmesi\nYanıt kalitesinin ölçülmesi ve iyileştirilmesi",
+        "image": "/assets/photos/1655720828018-edd2daec9349-1600.webp"
+      },
+      {
+        "icon": "flow",
+        "title": "Otomasyon",
+        "summary": "Tekrarlayan işleri insansız, hatasız akışlara çeviririz.",
+        "heading": "Elle yapılan iş, kendiliğinden yürüsün",
+        "points": "Zaman alan manuel adımların tespiti\nSistemler arası veri akışının otomatikleşmesi\nHata ve istisna durumlarında ekibe bildirim\nKazanılan zamanın ölçülmesi",
+        "image": "/assets/photos/1537462715879-360eeb61a0ad-1600.webp"
+      }
+    ]
+  },
+  {
+    "slug": "ozel-yazilim",
+    "label": "MÜHENDİSLİK",
+    "title": "Özel Yazılım",
+    "lead": "Hazır şablonlar kullanmıyoruz. Tamamen işletmenizin veri ve operasyon yapısına özel, ölçeklenebilir, güvenli ve yüksek performanslı yazılım altyapıları kuruyoruz.",
+    "tags": "Özel API, Enterprise Web, Veri Yönetimi",
+    "card_image": "/assets/photos/1461749280684-dccba630e2f6-1600.webp",
+    "card_color": "#064e3b",
+    "features": [
+      {
+        "icon": "code",
+        "title": "Özel API",
+        "summary": "Sistemlerinizi birbirine bağlayan özel servisler.",
+        "heading": "Araçlarınız aynı dili konuşsun",
+        "points": "İhtiyaca göre tasarlanmış, belgelenmiş servisler\nAPI'si olmayan sistemler için ara çözümler\nYetkilendirme ve erişim kayıtları\nYük arttıkça ölçeklenen altyapı",
+        "image": "/assets/photos/1461749280684-dccba630e2f6-1600.webp"
+      },
+      {
+        "icon": "monitor",
+        "title": "Enterprise Web",
+        "summary": "Ekibinizin her gün kullandığı iç uygulamalar.",
+        "heading": "Sürecinize göre yazılmış uygulama",
+        "points": "Panel, portal ve yönetim ekranları\nRol bazlı erişim ve onay akışları\nMevcut sistemlerinizle birlikte çalışma\nDar bir ilk sürümle başlayıp adım adım genişleme",
+        "image": "/assets/photos/1542744094-3a31f272c490-1600.webp"
+      },
+      {
+        "icon": "database",
+        "title": "Veri Yönetimi",
+        "summary": "Dağınık veriyi tek, güvenilir bir kaynağa toplarız.",
+        "heading": "Tek doğru, herkes için",
+        "points": "Farklı kaynaklardaki verinin birleştirilmesi\nTemizleme, eşleştirme ve tutarlılık kontrolleri\nYöneticilerin anlık okuyabileceği tablolar\nErişim ve saklama kurallarının baştan tanımlanması",
+        "image": "/assets/photos/1526628953301-3e589a6a8b74-1600.webp"
+      }
+    ]
+  }
+]

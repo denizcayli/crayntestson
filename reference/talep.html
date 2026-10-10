@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+
+    <title>Talep Formu | Crayn AI</title>
+
+                        
+    
+        <link rel="stylesheet" href="/assets/crayn/crayn-tailwind.css?v=1781878728">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/crayn/vendor/swiper-bundle.min.css?v=1781878668" />
+    <link rel="stylesheet" href="/assets/crayn/crayn-theme.css?v=1781870895">
+
+    
+    
+    
+        
+    
+                        <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Crayn AI","url":"https://crayn.ai"}</script>
+    
+    <style>
+    /* Crayn talep wizard — self-contained (derlenmis Tailwind'e bagimli degil) */
+    .tlp-wrap { position:relative; }
+    .tlp-glow { position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:600px; max-width:100%; background:rgba(245,183,0,.05); border-radius:9999px; filter:blur(160px); pointer-events:none; }
+    .tlp-accent { color:#f5b700; }
+    .tlp-eyebrow { letter-spacing:.2em; }
+    .tlp-card { background:rgba(10,10,10,.6); border:1px solid #1a1a1a; border-radius:1rem; }
+    .tlp-divider { border-top:1px solid #1a1a1a; }
+
+    /* Girdi alanlari */
+    .tlp-input { width:100%; background:#0a0a0a; border:1px solid #222; border-radius:.75rem; padding:.75rem 1rem; color:#fff; font-size:.95rem; outline:none; transition:border-color .2s, box-shadow .2s; }
+    .tlp-input::placeholder { color:#4b5563; }
+    .tlp-input:focus { border-color:#f5b700; box-shadow:0 0 0 1px #f5b700; }
+    select.tlp-input { appearance:none; -webkit-appearance:none; cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right .9rem center; background-size:1.1rem; padding-right:2.5rem; }
+    textarea.tlp-input { resize:none; }
+
+    /* Secenek kartlari (radio/checkbox/consent) */
+    .tlp-opt { display:flex; align-items:center; gap:.75rem; padding:1rem; background:#0a0a0a; border:1px solid #222; border-radius:.75rem; cursor:pointer; transition:border-color .2s, background .2s; }
+    .tlp-opt:hover { border-color:#444; }
+    .tlp-opt.tlp-opt--start { align-items:flex-start; }
+    .tlp-opt input { position:absolute; opacity:0; width:0; height:0; }
+    .tlp-opt:has(input:checked) { border-color:#f5b700; background:rgba(245,183,0,.05); }
+
+    .tlp-mark { width:1.25rem; height:1.25rem; flex-shrink:0; display:flex; align-items:center; justify-content:center; border:2px solid #333; transition:all .2s; }
+    .tlp-mark--radio { border-radius:9999px; }
+    .tlp-mark--check { border-radius:.375rem; margin-top:.15rem; }
+    .tlp-mark .tlp-dot { width:.625rem; height:.625rem; border-radius:9999px; background:#f5b700; transform:scale(0); transition:transform .15s; }
+    .tlp-mark .tlp-ico { width:.75rem; height:.75rem; color:#000; transform:scale(0); transition:transform .15s; }
+    .tlp-opt input:checked ~ .tlp-mark--radio { border-color:#f5b700; }
+    .tlp-opt input:checked ~ .tlp-mark--radio .tlp-dot { transform:scale(1); }
+    .tlp-opt input:checked ~ .tlp-mark--check { border-color:#f5b700; background:#f5b700; }
+    .tlp-opt input:checked ~ .tlp-mark--check .tlp-ico { transform:scale(1); }
+    .tlp-opt-label { font-size:.875rem; font-weight:500; color:#d1d5db; }
+
+    /* Ilerleme cubugu */
+    .tlp-dot-step { display:flex; align-items:center; justify-content:center; width:2.25rem; height:2.25rem; border-radius:9999px; border:2px solid #222; color:#4b5563; font-weight:700; font-size:.875rem; flex-shrink:0; transition:all .25s; }
+    .tlp-dot-step.is-active { border-color:#f5b700; color:#f5b700; background:rgba(245,183,0,.1); }
+    .tlp-dot-step.is-done { border-color:#f5b700; background:#f5b700; color:#000; }
+    .tlp-bar-step { flex:1; height:2px; margin:0 .5rem; background:#222; transition:background .25s; }
+    .tlp-bar-step.is-done { background:#f5b700; }
+
+    .tlp-success-icon { display:inline-flex; align-items:center; justify-content:center; width:4rem; height:4rem; border-radius:9999px; background:rgba(245,183,0,.1); border:1px solid rgba(245,183,0,.3); }
+</style>
+    
+    <style>
+        body { font-family: 'Manrope', system-ui, -apple-system, sans-serif; background:#070707; }
+        /* Koyu tema icin zengin metin (prose) okunabilirligi */
+        .prose-crayn { color:#d1d5db; }
+        .prose-crayn h1,.prose-crayn h2,.prose-crayn h3,.prose-crayn h4 { color:#fff; }
+        .prose-crayn a { color:#f5b700; text-decoration:underline; }
+        .prose-crayn strong { color:#fff; }
+        .prose-crayn img { border-radius:0.75rem; max-width:100%; height:auto; }
+        .prose-crayn blockquote { border-left:3px solid #f5b700; padding-left:1rem; color:#9ca3af; font-style:italic; }
+        .prose-crayn ul,.prose-crayn ol { padding-left:1.25rem; }
+        .prose-crayn ul { list-style:disc; } .prose-crayn ol { list-style:decimal; }
+    </style>
+</head>
+<body class="bg-[#070707] text-gray-200 antialiased">
+
+    <!-- NAVİGASYON (crayn tema - paylasilan) -->
+<nav class="fixed top-0 w-full z-[60] px-6 md:px-12 py-6 flex justify-between items-center mix-blend-difference pointer-events-none">
+    <a href="/" class="text-2xl font-extrabold tracking-tighter text-white pointer-events-auto">Crayn AI<span class="text-gray-500">.</span>
+</a>
+
+    <div class="flex items-center gap-4 md:gap-6 pointer-events-auto">
+        <a href="/talep" class="group flex items-center gap-2 border border-white/20 hover:border-white/50 bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide text-white transition-all">
+            <span>Bize Ulaşın</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+            </svg>
+        </a>
+
+        <button id="menu-toggle" class="group flex items-center gap-3 text-sm font-semibold tracking-wide uppercase text-white transition-colors">
+            <span id="menu-text" class="hidden sm:block group-hover:text-gray-400 transition-colors">Menü</span>
+            <div class="w-8 h-4 flex flex-col justify-between relative cursor-pointer">
+                <span class="hamburger-line line-1 w-full h-[2px] bg-white rounded-full"></span>
+                <span class="hamburger-line line-2 w-full h-[2px] bg-white rounded-full"></span>
+                <span class="hamburger-line line-3 w-full h-[2px] bg-white rounded-full"></span>
+            </div>
+        </button>
+    </div>
+</nav>
+
+<!-- TAM EKRAN OVERLAY MENÜ -->
+<div id="full-menu" class="fixed inset-0 bg-[#030303]/98 backdrop-blur-md z-50 flex-col opacity-0 px-6 md:px-20 overflow-y-auto" style="display: none;">
+    <div class="fixed inset-0 bg-grid opacity-20 pointer-events-none"></div>
+
+    <div class="w-full min-h-screen max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-12 md:gap-0 py-24">
+        <ul class="flex flex-col gap-4 md:gap-6 text-3xl md:text-5xl lg:text-[4rem] font-extrabold tracking-tighter uppercase w-full md:w-2/3">
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">01</span><a href="/#" class="menu-link-item">Ana Sayfa</a></li>
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">02</span><a href="/#services" class="menu-link-item">Crayn AI Nedir?</a></li>
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">03</span><a href="/#services" class="menu-link-item">Üretken AI</a></li>
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">04</span><a href="/#services" class="menu-link-item">Hizmetler</a></li>
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">05</span><a href="/#solutions" class="menu-link-item">Neler Yapıyoruz</a></li>
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">06</span><a href="/#about" class="menu-link-item">Hakkımızda</a></li>
+                        <li class="menu-list-item flex items-center"><span class="text-gray-700 text-lg md:text-2xl mr-6 w-8 font-mono">07</span><a href="/#cta" class="menu-link-item">İletişim</a></li>
+                    </ul>
+
+        <div class="menu-info flex flex-col justify-end text-left md:text-right md:items-end gap-8 w-full md:w-1/3">
+            <div class="menu-info-item">
+                <span class="text-gray-500 text-xs uppercase tracking-widest block mb-2">İletişim Kurun</span>
+                <a href="mailto:hello@crayn.ai" class="text-2xl md:text-3xl font-bold hover:text-gray-400 transition text-white">hello@crayn.ai</a>
+                                    <a href="tel:05442407199" class="block mt-2 text-base font-semibold text-gray-400 hover:text-white transition">05442407199</a>
+                            </div>
+            <div class="menu-info-item">
+                <span class="text-gray-500 text-xs uppercase tracking-widest block mb-2">Merkez</span>
+                <p class="text-gray-400 max-w-[250px] leading-relaxed">Bilişim Vadisi, Teknoloji Geliştirme Bölgesi, Kocaeli / Türkiye</p>
+            </div>
+            <div class="menu-info-item flex gap-6 mt-2">
+                <a href="#" class="text-sm font-bold tracking-widest text-white hover:text-gray-500 uppercase transition-colors">LinkedIn</a>
+                <a href="#" class="text-sm font-bold tracking-widest text-white hover:text-gray-500 uppercase transition-colors">Twitter</a>
+                                                            </div>
+        </div>
+    </div>
+</div>
+
+    <main class="min-h-screen pt-24">
+        
+<section class="tlp-wrap py-16 md:py-24 px-6">
+    <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+    <div class="tlp-glow"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+
+                    
+            <div class="text-center mb-10">
+                <span class="tlp-eyebrow inline-block text-xs font-bold uppercase tlp-accent mb-4">Talep Formu</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-white leading-tight">
+                    Projenizi birlikte planlayalım
+                </h1>
+            </div>
+
+            
+            <div id="talepProgress" class="mb-10">
+                <div class="flex items-center justify-between mb-3">
+                                            <div class="flex items-center flex-1 last:flex-none">
+                            <div class="tlp-dot-step is-active" data-dot="1">1</div>
+                                                            <div class="tlp-bar-step" data-bar="1"></div>
+                                                    </div>
+                                            <div class="flex items-center flex-1 last:flex-none">
+                            <div class="tlp-dot-step " data-dot="2">2</div>
+                                                            <div class="tlp-bar-step" data-bar="2"></div>
+                                                    </div>
+                                            <div class="flex items-center flex-1 last:flex-none">
+                            <div class="tlp-dot-step " data-dot="3">3</div>
+                                                            <div class="tlp-bar-step" data-bar="3"></div>
+                                                    </div>
+                                            <div class="flex items-center flex-1 last:flex-none">
+                            <div class="tlp-dot-step " data-dot="4">4</div>
+                                                    </div>
+                                    </div>
+                <div class="text-sm text-gray-500">
+                    <span id="stepCounter" class="tlp-accent font-semibold">Adım 1/4</span>
+                </div>
+            </div>
+
+            
+            <div id="talepSuccess" class="hidden text-center py-16 px-6 tlp-card">
+                <div class="tlp-success-icon mb-6">
+                    <svg class="w-8 h-8 tlp-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <h2 class="text-2xl font-extrabold text-white mb-3">Talebiniz alındı!</h2>
+                <p id="talepSuccessMsg" class="text-gray-400 max-w-md mx-auto">Talebiniz alındı! Ekibimiz en kısa sürede sizinle iletişime geçecek.</p>
+                <a href="/" class="inline-block mt-8 tlp-accent font-semibold hover:underline">← Ana sayfaya dön</a>
+            </div>
+
+            
+            <form id="talepForm" method="POST" action="https://crayn.ai/form/talep"
+                  data-steps="4" class="tlp-card p-6 md:p-10">
+                <input type="hidden" name="_token" value="obcd7GVngWHhCClktufia3E1RepaRyhMbxitAqzw" autocomplete="off">                                    <div style="position:absolute;left:-9999px" aria-hidden="true">
+                        <input type="text" name="_hp" tabindex="-1" autocomplete="off">
+                    </div>
+                                <input type="hidden" name="_url" value="https://crayn.ai/talep">
+                <input type="hidden" name="_referrer" value="https://crayn.ai/">
+                <input type="hidden" name="_utm_source" value="">
+                <input type="hidden" name="_utm_medium" value="">
+                <input type="hidden" name="_utm_campaign" value="">
+                <input type="hidden" name="_utm_content" value="">
+                <input type="hidden" name="_utm_term" value="">
+
+                                    <div class="talep-step " data-step="1">
+                        <div class="mb-8">
+                            <h2 class="text-xl md:text-2xl font-bold text-white">İlgilendiğiniz Hizmet</h2>
+                                                            <p class="text-gray-500 mt-1 text-sm">Size nasıl yardımcı olabiliriz?</p>
+                                                    </div>
+
+                        <div class="space-y-6">
+                                                                                            <div class="talep-field" data-field="hizmet">
+                                    
+                                                                                <label class="block text-sm font-semibold text-gray-300 mb-3">
+                                                Hangi konuda destek istiyorsunuz?<span class="tlp-accent ml-0.5">*</span>                                            </label>
+                                            <div class="grid sm:grid-cols-2 gap-3">
+                                                                                                    <label class="tlp-opt">
+                                                        <input type="radio" name="fields[hizmet]" value="generative_ai"   data-required="1" >
+                                                        <span class="tlp-mark tlp-mark--radio"><span class="tlp-dot"></span></span>
+                                                        <span class="tlp-opt-label">Üretken Yapay Zeka Çözümleri</span>
+                                                    </label>
+                                                                                                    <label class="tlp-opt">
+                                                        <input type="radio" name="fields[hizmet]" value="otomasyon"   data-required="1" >
+                                                        <span class="tlp-mark tlp-mark--radio"><span class="tlp-dot"></span></span>
+                                                        <span class="tlp-opt-label">Süreç Otomasyonu</span>
+                                                    </label>
+                                                                                                    <label class="tlp-opt">
+                                                        <input type="radio" name="fields[hizmet]" value="veri_analitik"   data-required="1" >
+                                                        <span class="tlp-mark tlp-mark--radio"><span class="tlp-dot"></span></span>
+                                                        <span class="tlp-opt-label">Veri &amp; Analitik</span>
+                                                    </label>
+                                                                                                    <label class="tlp-opt">
+                                                        <input type="radio" name="fields[hizmet]" value="ozel_yazilim"   data-required="1" >
+                                                        <span class="tlp-mark tlp-mark--radio"><span class="tlp-dot"></span></span>
+                                                        <span class="tlp-opt-label">Özel Yazılım Geliştirme</span>
+                                                    </label>
+                                                                                                    <label class="tlp-opt">
+                                                        <input type="radio" name="fields[hizmet]" value="danismanlik"   data-required="1" >
+                                                        <span class="tlp-mark tlp-mark--radio"><span class="tlp-dot"></span></span>
+                                                        <span class="tlp-opt-label">Danışmanlık</span>
+                                                    </label>
+                                                                                                    <label class="tlp-opt">
+                                                        <input type="radio" name="fields[hizmet]" value="diger"   data-required="1" >
+                                                        <span class="tlp-mark tlp-mark--radio"><span class="tlp-dot"></span></span>
+                                                        <span class="tlp-opt-label">Diğer</span>
+                                                    </label>
+                                                                                            </div>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                            
+                                                    </div>
+                    </div>
+                                    <div class="talep-step hidden" data-step="2">
+                        <div class="mb-8">
+                            <h2 class="text-xl md:text-2xl font-bold text-white">Proje Detayları</h2>
+                                                            <p class="text-gray-500 mt-1 text-sm">Bütçe, zaman çizelgesi ve kapsam.</p>
+                                                    </div>
+
+                        <div class="space-y-6">
+                                                                                            <div class="talep-field" data-field="butce">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Tahmini Bütçe<span class="tlp-accent ml-0.5">*</span>                                        </label>
+                                    
+                                                                                <select name="fields[butce]"  data-required="1"  class="tlp-input">
+                                                <option value="">Bütçe aralığı seçin</option>
+                                                                                                    <option value="0-100k" >100.000 ₺ altı</option>
+                                                                                                    <option value="100k-500k" >100.000 – 500.000 ₺</option>
+                                                                                                    <option value="500k-1m" >500.000 – 1.000.000 ₺</option>
+                                                                                                    <option value="1m+" >1.000.000 ₺ üzeri</option>
+                                                                                                    <option value="belirsiz" >Henüz net değil</option>
+                                                                                            </select>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="zaman">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Zaman Çizelgesi<span class="tlp-accent ml-0.5">*</span>                                        </label>
+                                    
+                                                                                <select name="fields[zaman]"  data-required="1"  class="tlp-input">
+                                                <option value="">Ne zaman başlamak istersiniz?</option>
+                                                                                                    <option value="hemen" >Hemen</option>
+                                                                                                    <option value="1-3ay" >1-3 ay içinde</option>
+                                                                                                    <option value="3-6ay" >3-6 ay içinde</option>
+                                                                                                    <option value="arastirma" >Sadece araştırıyorum</option>
+                                                                                            </select>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="aciklama">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Projenizi kısaca anlatın                                        </label>
+                                    
+                                                                                <textarea name="fields[aciklama]" rows="4" placeholder="İhtiyaçlarınızı ve hedeflerinizi birkaç cümleyle paylaşın..."  class="tlp-input"></textarea>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                            
+                                                    </div>
+                    </div>
+                                    <div class="talep-step hidden" data-step="3">
+                        <div class="mb-8">
+                            <h2 class="text-xl md:text-2xl font-bold text-white">Şirket Bilgileri</h2>
+                                                            <p class="text-gray-500 mt-1 text-sm">Sizi biraz tanıyalım.</p>
+                                                    </div>
+
+                        <div class="space-y-6">
+                                                                                            <div class="talep-field" data-field="firma">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Firma Adı                                        </label>
+                                    
+                                                                                <input type="text" name="fields[firma]" value="" placeholder="Şirketinizin adı"  class="tlp-input">
+                                    
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="sektor">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Sektör                                        </label>
+                                    
+                                                                                <select name="fields[sektor]"  class="tlp-input">
+                                                <option value="">Sektör seçin</option>
+                                                                                                    <option value="uretim" >Üretim / Sanayi</option>
+                                                                                                    <option value="eticaret" >E-ticaret / Perakende</option>
+                                                                                                    <option value="finans" >Finans / Bankacılık</option>
+                                                                                                    <option value="saglik" >Sağlık</option>
+                                                                                                    <option value="teknoloji" >Teknoloji / Yazılım</option>
+                                                                                                    <option value="egitim" >Eğitim</option>
+                                                                                                    <option value="diger" >Diğer</option>
+                                                                                            </select>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="olcek">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Çalışan Sayısı                                        </label>
+                                    
+                                                                                <select name="fields[olcek]"  class="tlp-input">
+                                                <option value="">Şirket ölçeği</option>
+                                                                                                    <option value="1-10" >1-10</option>
+                                                                                                    <option value="11-50" >11-50</option>
+                                                                                                    <option value="51-200" >51-200</option>
+                                                                                                    <option value="200+" >200+</option>
+                                                                                            </select>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                            
+                                                    </div>
+                    </div>
+                                    <div class="talep-step hidden" data-step="4">
+                        <div class="mb-8">
+                            <h2 class="text-xl md:text-2xl font-bold text-white">İletişim Bilgileri</h2>
+                                                            <p class="text-gray-500 mt-1 text-sm">Size nasıl ulaşalım?</p>
+                                                    </div>
+
+                        <div class="space-y-6">
+                                                                                            <div class="talep-field" data-field="ad_soyad">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Ad Soyad<span class="tlp-accent ml-0.5">*</span>                                        </label>
+                                    
+                                                                                <input type="text" name="fields[ad_soyad]" value="" placeholder="Adınız ve soyadınız"  data-required="1"  class="tlp-input">
+                                    
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="eposta">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            E-posta<span class="tlp-accent ml-0.5">*</span>                                        </label>
+                                    
+                                                                                <input type="email" name="fields[eposta]" value="" placeholder="ornek@firma.com"  data-required="1"  class="tlp-input">
+                                    
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="telefon">
+                                                                            <label class="block text-sm font-semibold text-gray-300 mb-2">
+                                            Telefon                                        </label>
+                                    
+                                                                                <input type="tel" name="fields[telefon]" value="" placeholder="+90 5XX XXX XX XX"  class="tlp-input">
+                                    
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                                                                                            <div class="talep-field" data-field="kvkk_onay">
+                                    
+                                                                                <label class="tlp-opt tlp-opt--start">
+                                                <input type="checkbox" name="fields[kvkk_onay]" value="1"  data-required="1" >
+                                                <span class="tlp-mark tlp-mark--check"><svg class="tlp-ico" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span>
+                                                <span class="text-sm text-gray-400 leading-relaxed">
+                                                    Kişisel verilerimin işlenmesine ilişkin aydınlatma metnini okudum ve onaylıyorum.
+                                                                                                    </span>
+                                            </label>
+                                            
+                                                                        <p class="field-error hidden text-xs text-red-400 mt-2"></p>
+                                </div>
+                            
+                                                    </div>
+                    </div>
+                
+                
+                <div class="flex items-center justify-between gap-4 mt-10 pt-6 tlp-divider">
+                    <button type="button" id="talepPrev" class="hidden items-center gap-2 px-5 py-3 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+                        Geri
+                    </button>
+                    <div class="flex-1"></div>
+                    <button type="button" id="talepNext" class="magnetic-btn">İleri</button>
+                    <button type="submit" id="talepSubmit" class="magnetic-btn hidden">Talebi Gönder</button>
+                </div>
+
+                <p id="talepFormError" class="hidden text-sm text-red-400 mt-4 text-center"></p>
+            </form>
+            </div>
+</section>
+    </main>
+
+    <footer class="border-t border-[#1a1a1a] bg-[#050505] py-10 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter text-white">Crayn AI<span class="text-gray-500">.</span>
+</a>
+        <div class="text-gray-600 text-sm font-semibold">© 2026 Crayn AI. A Generative AI Software Company.</div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/crayn/vendor/lenis.min.js"></script>
+    <script src="/assets/crayn/vendor/gsap.min.js"></script>
+    <script src="/assets/crayn/vendor/ScrollTrigger.min.js"></script>
+    <script src="/assets/crayn/vendor/swiper-bundle.min.js"></script>
+    <script src="/assets/crayn/crayn-theme.js?v=1781878216"></script>
+
+    <script src="/assets/crayn/crayn-talep.js?v=1781956047"></script>
+
+    
+    </body>
+</html>
