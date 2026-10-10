@@ -71,8 +71,6 @@ export default function ExpandingCards({ items, className = '', scrollLength = '
             <img
               src={item.image}
               alt=""
-              loading="lazy"
-              decoding="async"
               className={`absolute left-1/2 max-w-none -translate-x-1/2 transition-opacity duration-700 ${item.contain ? 'top-[14%] h-[44%] w-auto object-contain' : 'top-0 h-full w-[1400px] object-cover'} ${open ? 'opacity-100' : 'opacity-80'}`}
             />
             <span className={`absolute inset-0 bg-gradient-to-t ${item.contain ? 'from-black/60 to-transparent' : 'from-black/85 via-black/45 to-black/45'}`} />

@@ -149,7 +149,7 @@ function crayn_basa_ekle() {
 	$uygulama = get_template_directory_uri() . '/app';
 	crayn_seo_etiketleri();
 	?>
-	<link rel="icon" href="<?php echo esc_url( crayn_ayar( 'logo_simge' ) ? crayn_ayar( 'logo_simge' ) : $uygulama . '/assets/brand/crayn-icon-192.png' ); ?>" />
+	<link rel="icon" href="<?php echo esc_url( crayn_ayar( 'logo_simge' ) ? crayn_ayar( 'logo_simge' ) : $uygulama . '/assets/brand/crayn-icon.png' ); ?>" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<?php crayn_on_yukleme(); ?>

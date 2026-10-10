@@ -3,7 +3,7 @@ import { isDarkBehind, watchBackdrop } from '../lib/backdrop.js'
 import { SERVICES } from '../data/services.js'
 import { SEND_FAILED, sendRequest } from '../lib/requests.js'
 import { scoped } from '../lib/text.js'
-import { LOGO_ICON_SMALL } from '../lib/site.js'
+import { LOGO_ICON } from '../lib/site.js'
 
 const t = scoped('kart')
 
@@ -163,7 +163,7 @@ export default function PlanCard({ service = '' }) {
             <span className="plan-pill__label" aria-hidden="true">{PILL[0]}<span className="hidden sm:inline"> {PILL.slice(1).join(' ')}</span></span>
             <span className="flex shrink-0 -space-x-2" aria-hidden="true">
               <span className="plan-pill__logo relative z-[2] flex size-8 items-center justify-center sm:size-9">
-                <img src={LOGO_ICON_SMALL} alt="" className="size-7 sm:size-8" />
+                <img src={LOGO_ICON} alt="" className="size-7 sm:size-8" />
               </span>
               <span className={`plan-pill__extra relative z-[1] flex size-8 items-center justify-center rounded-full sm:size-9 ${onDark ? 'bg-white/15' : 'bg-graphite/10'}`}><Stroke d={VIDEO} className="size-4" /></span>
               <span className={`plan-pill__extra flex size-8 items-center justify-center rounded-full sm:size-9 ${onDark ? 'bg-white/15' : 'bg-graphite/10'}`}><Stroke d={CALENDAR} className="size-4" /></span>
@@ -183,7 +183,7 @@ export default function PlanCard({ service = '' }) {
               <Close onClick={() => setOpen(false)} className="absolute right-4 top-4" />
               <div className="flex justify-center -space-x-2" aria-hidden="true">
                 <span className="flex size-11 items-center justify-center rounded-full border-2 border-white bg-graphite">
-                  <img src={LOGO_ICON_SMALL} alt="" className="size-6" />
+                  <img src={LOGO_ICON} alt="" className="size-6" />
                 </span>
                 <span className="flex size-11 items-center justify-center rounded-full border-2 border-white bg-[#eef2f8]"><Stroke d={VIDEO} /></span>
                 <span className="flex size-11 items-center justify-center rounded-full border-2 border-white bg-[#eef2f8]"><Stroke d={CALENDAR} /></span>

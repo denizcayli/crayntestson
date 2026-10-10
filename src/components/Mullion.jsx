@@ -124,7 +124,7 @@ export default function Mullion({ items, className = '' }) {
           {items.map((item, index) => (
             // Pictures before the current one are wiped away upwards, later ones wait below.
             <div key={item.id} className="mullion__slide" data-place={Math.sign(index - current)} aria-hidden={index !== current}>
-              <img src={item.image} alt="" loading="lazy" decoding="async" draggable={false} />
+              <img src={item.image} alt="" draggable={false} />
             </div>
           ))}
           <div className="mullion__scrim" aria-hidden="true" />

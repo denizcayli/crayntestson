@@ -760,8 +760,6 @@ body::after {
     will-change: transform;
 }
 .preloader-screen { position: absolute; inset: 0; background: #f8fafc; }
-/* The copy that comes with the page: its labels stay above what the app draws */
-#crayn-acilis { z-index: 10000; pointer-events: none; }
 .preloader-slot {
     position: relative;
     flex-shrink: 0;

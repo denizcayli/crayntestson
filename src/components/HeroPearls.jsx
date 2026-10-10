@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { introOpening } from './Preloader.jsx'
 import { withBase } from '../lib/paths.js'
 
 // Layout is authored on a 1000 x 657 reference frame (the proportions of the original scene)
@@ -114,28 +113,6 @@ const unfocusFragment = (samples) => /* glsl */ `
   }
 `
 
-// Smooth normals of an indexed mesh, worked out over the plain arrays. three's own
-// computeVertexNormals gives the same result far more slowly, and this runs for every pearl on
-// every frame.
-function smoothNormals(positions, index, normals) {
-  normals.fill(0)
-  for (let i = 0; i < index.length; i += 3) {
-    const a = index[i] * 3, b = index[i + 1] * 3, c = index[i + 2] * 3
-    const cbx = positions[c] - positions[b], cby = positions[c + 1] - positions[b + 1], cbz = positions[c + 2] - positions[b + 2]
-    const abx = positions[a] - positions[b], aby = positions[a + 1] - positions[b + 1], abz = positions[a + 2] - positions[b + 2]
-    const nx = cby * abz - cbz * aby, ny = cbz * abx - cbx * abz, nz = cbx * aby - cby * abx
-    normals[a] += nx; normals[a + 1] += ny; normals[a + 2] += nz
-    normals[b] += nx; normals[b + 1] += ny; normals[b + 2] += nz
-    normals[c] += nx; normals[c + 1] += ny; normals[c + 2] += nz
-  }
-  for (let i = 0; i < normals.length; i += 3) {
-    const length = Math.hypot(normals[i], normals[i + 1], normals[i + 2]) || 1
-    normals[i] /= length
-    normals[i + 1] /= length
-    normals[i + 2] /= length
-  }
-}
-
 // Hero backdrop: a photo with four slowly wobbling pearls in front of it, shown through the
 // unfocus pass. `blurRef.current` (1 to 0) says how unfocused it is; the hero drives it from the
 // scroll position. `revealRef` is the coloured copy of the heading; it is masked to the pearls
@@ -181,8 +158,6 @@ export default function HeroPearls({ revealRef, blurRef }) {
         photo.material.color.set(0xffffff)
         photo.material.needsUpdate = true
         resize()
-        // Nothing redraws the scene while it waits for the intro, or when it stands still.
-        if (!frame) draw(0)
       })
 
       // Everything is drawn into an offscreen picture first, then shown through the unfocus pass.
@@ -282,16 +257,6 @@ export default function HeroPearls({ revealRef, blurRef }) {
       }
       window.addEventListener('pointermove', onPointerMove)
 
-      // Where the coloured heading sits in the hero. Measuring makes the browser lay the page
-      // out, so it is done now and then instead of on every frame.
-      const headingAt = { x: 0, y: 0, age: 0 }
-      const measureHeading = (reveal) => {
-        const heroRect = mount.getBoundingClientRect()
-        const rect = reveal.getBoundingClientRect()
-        headingAt.x = rect.left - heroRect.left
-        headingAt.y = rect.top - heroRect.top
-      }
-
       let focus = 1
       // What the heading was last told, so that it is only told again when something has moved.
       const told = []
@@ -308,9 +273,7 @@ export default function HeroPearls({ revealRef, blurRef }) {
             positions.array[i + 2] = z * offset
           }
           positions.needsUpdate = true
-          const normals = blob.mesh.geometry.attributes.normal
-          smoothNormals(positions.array, blob.mesh.geometry.index.array, normals.array)
-          normals.needsUpdate = true
+          blob.mesh.geometry.computeVertexNormals()
 
           const [px, py] = place(
             blob.x + Math.sin(seconds * 0.31 + blob.seed) * blob.drift,
@@ -331,7 +294,8 @@ export default function HeroPearls({ revealRef, blurRef }) {
         // Tell the coloured heading where the pearls and the spotlight are (relative to its own box).
         const reveal = revealRef.current
         if (reveal) {
-          if (headingAt.age++ % 30 === 0) measureHeading(reveal)
+          const heroRect = mount.getBoundingClientRect()
+          const rect = reveal.getBoundingClientRect()
           const spots = [
             ...blobs.map((blob) => [blob.px, blob.py, blob.pr * 0.82]),
             [spotlight.x, spotlight.y, pointer.seen ? SPOTLIGHT.radius * view.size : 0],
@@ -339,7 +303,7 @@ export default function HeroPearls({ revealRef, blurRef }) {
           // Whole pixels: the pearls drift slowly, so most frames change nothing and the heading
           // is left alone instead of being repainted.
           spots.forEach(([x, y, radius], index) => {
-            const spot = `${Math.round(x - headingAt.x)},${Math.round(y - headingAt.y)},${Math.round(radius)}`
+            const spot = `${Math.round(x - (rect.left - heroRect.left))},${Math.round(y - (rect.top - heroRect.top))},${Math.round(radius)}`
             if (told[index] === spot) return
             told[index] = spot
             const [sx, sy, sr] = spot.split(',')
@@ -370,8 +334,7 @@ export default function HeroPearls({ revealRef, blurRef }) {
         if (visible) draw(now / 1000)
       }
       draw(0)
-      // The pearls start moving when the intro uncovers them; until then one still frame is enough.
-      if (!reducedMotion) introOpening.then(() => { if (!disposed) frame = requestAnimationFrame(loop) })
+      if (!reducedMotion) frame = requestAnimationFrame(loop)
 
       // No rendering while the hero is scrolled out of view.
       const visibility = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting })

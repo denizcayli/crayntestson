@@ -20,9 +20,9 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-panel">
-        <img src={LOGO_ICON} alt="" aria-hidden="true" loading="lazy" decoding="async" className="footer-mark footer-mark--left" />
-        <img src={LOGO_ICON} alt="" aria-hidden="true" loading="lazy" decoding="async" className="footer-mark footer-mark--right" />
-        <img src={LOGO_ICON} alt="" aria-hidden="true" loading="lazy" decoding="async" className="footer-mark footer-mark--centre" />
+        <img src={LOGO_ICON} alt="" aria-hidden="true" className="footer-mark footer-mark--left" />
+        <img src={LOGO_ICON} alt="" aria-hidden="true" className="footer-mark footer-mark--right" />
+        <img src={LOGO_ICON} alt="" aria-hidden="true" className="footer-mark footer-mark--centre" />
 
         <div className="relative z-10 flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div className="flex max-w-xs flex-col items-start gap-5">

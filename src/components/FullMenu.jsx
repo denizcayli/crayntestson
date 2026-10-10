@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import AuroraFlow from './AuroraFlow.jsx'
 import SocialLinks from './SocialLinks.jsx'
 import { SOCIALS } from '../data/socials.js'
@@ -10,21 +9,9 @@ import { t } from '../lib/text.js'
 // in one after another out of a blur; pointing at one nudges it forward and dims the rest.
 // Opening and closing are driven from lib/siteAnimations.js.
 export default function FullMenu() {
-  // The light behind the menu costs a WebGL scene, so it is set up when the visitor first
-  // reaches for the menu button rather than on every page load.
-  const [wanted, setWanted] = useState(false)
-  useEffect(() => {
-    const toggle = document.getElementById('menu-toggle')
-    if (!toggle) return setWanted(true)
-    const want = () => setWanted(true)
-    const signs = ['pointerenter', 'pointerdown', 'focus', 'click']
-    signs.forEach((sign) => toggle.addEventListener(sign, want, { once: true }))
-    return () => signs.forEach((sign) => toggle.removeEventListener(sign, want))
-  }, [])
-
   return (
     <div id="full-menu" className="menu-overlay" role="dialog" aria-modal="true" aria-label="Menü" style={{ display: 'none' }}>
-      {wanted && <AuroraFlow background="#05070a" color1="#7da3ff" color2="#33507f" intensity={0.42} speed={0.7} pointerSpeed={0.35} className="!fixed pointer-events-none" />}
+      <AuroraFlow background="#05070a" color1="#7da3ff" color2="#33507f" intensity={0.42} speed={0.7} pointerSpeed={0.35} className="!fixed pointer-events-none" />
       <div className="menu-overlay__body">
         <nav aria-label="Ana menü">
           <ul className="menu-overlay__links">

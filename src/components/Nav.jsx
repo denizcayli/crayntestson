@@ -3,7 +3,7 @@ import { replayIntroOnNextLoad } from './Preloader.jsx'
 import { isDarkBehind, watchBackdrop } from '../lib/backdrop.js'
 import { withBase } from '../lib/paths.js'
 import { t } from '../lib/text.js'
-import { LOGO_ICON_SMALL, LOGO_WORDMARK } from '../lib/site.js'
+import { LOGO_ICON, LOGO_WORDMARK } from '../lib/site.js'
 
 // Top bar with no background of its own: brand on the left, contact button and the menu toggle
 // on the right. Each side picks light or dark lettering from what is behind it, so it stays
@@ -44,7 +44,7 @@ export default function Nav() {
         className="site-bar__side site-bar__brand"
         data-on={brandOnDark ? 'dark' : 'light'}
       >
-        <img src={LOGO_ICON_SMALL} alt="" className="size-8 md:size-9" />
+        <img src={LOGO_ICON} alt="" className="size-8 md:size-9" />
         {/* The wordmark file is white; over light sections it is shown in black */}
         <img src={LOGO_WORDMARK} alt="Crayn AI" className="site-bar__wordmark h-[10px] sm:h-[15px] md:h-[18px] w-auto" />
       </a>

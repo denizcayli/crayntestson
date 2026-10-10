@@ -73,7 +73,7 @@ export default function BentoGrid({ items, linkHref = '#cta', linkLabel = t('Gö
             style={{ order: slot, backgroundColor: item.color }}
             className={`bento-card ${SPAN[layout[slot].span]} ${open ? 'is-open h-[460px] md:h-[500px]' : 'h-[340px] md:h-[380px]'}`}
           >
-            <img src={item.image} alt="" loading="lazy" decoding="async" className={item.cover ? 'bento-card__cover' : 'bento-card__image'} />
+            <img src={item.image} alt="" className={item.cover ? 'bento-card__cover' : 'bento-card__image'} />
             <div className="bento-card__shade" />
             <div className="relative z-10 max-w-xl">
               <span className="text-xs font-bold tracking-widest text-white/60 uppercase block mb-2">

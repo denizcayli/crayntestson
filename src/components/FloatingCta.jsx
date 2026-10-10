@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import LiquidLogo from './LiquidLogo.jsx'
+import LiquidLogo, { LOGO_URL } from './LiquidLogo.jsx'
 import { introFinished } from './Preloader.jsx'
 import { isDarkBehind, watchBackdrop } from '../lib/backdrop.js'
 import { withBase } from '../lib/paths.js'
-import { LOGO_ICON_SMALL } from '../lib/site.js'
 import { PATHNAME } from '../lib/route.js'
 import { t } from '../lib/text.js'
 
@@ -12,20 +11,9 @@ import { t } from '../lib/text.js'
 export default function FloatingCta() {
   const ref = useRef(null)
   const [onDark, setOnDark] = useState(true)
-  // Starting the metal logo is heavy, so it waits for the intro and then for the visitor's first
-  // move (a scroll, a touch, the pointer, a key) and a quiet moment after it; the plain icon
-  // stands in until then.
+  // Preparing the metal logo is heavy, so it waits for the intro; the plain icon stands in.
   const [metal, setMetal] = useState(false)
-  useEffect(() => {
-    const whenIdle = window.requestIdleCallback ?? ((run) => setTimeout(run, 200))
-    const signs = ['scroll', 'pointermove', 'touchstart', 'keydown']
-    const start = () => {
-      signs.forEach((sign) => window.removeEventListener(sign, start))
-      whenIdle(() => setMetal(true))
-    }
-    introFinished.then(() => signs.forEach((sign) => window.addEventListener(sign, start, { passive: true })))
-    return () => signs.forEach((sign) => window.removeEventListener(sign, start))
-  }, [])
+  useEffect(() => { introFinished.then(() => setMetal(true)) }, [])
   const hidden = PATHNAME === '/talep'
 
   useEffect(() => {
@@ -79,7 +67,7 @@ export default function FloatingCta() {
           <circle cx="80" cy="80" r="47" fill="#F8FAFC" fillOpacity="0.92" />
         </svg>
         <span className="absolute left-1/2 top-1/2 size-[54%] -translate-x-1/2 -translate-y-1/2">
-          {metal ? <LiquidLogo /> : <img src={LOGO_ICON_SMALL} alt="" className="size-full" />}
+          {metal ? <LiquidLogo /> : <img src={LOGO_URL} alt="" className="size-full" />}
         </span>
       </span>
     </a>

@@ -25,8 +25,6 @@ export const SITE = { ...DEFAULTS, ...filled }
 // The mark and the wordmark. The wordmark file is white: it is shown as it is over dark
 // sections and in black over light ones, so a replacement has to be white on transparent too.
 export const LOGO_ICON = SITE.icon ?? withBase('/assets/brand/crayn-icon.png')
-// The mark where it is shown small (the bar, the buttons): a lighter file of the site's own mark.
-export const LOGO_ICON_SMALL = SITE.icon ?? withBase('/assets/brand/crayn-icon-192.webp')
 export const LOGO_WORDMARK = SITE.wordmark ?? withBase('/assets/brand/crayn-wordmark-white.png')
 export const MAIL_HREF = `mailto:${SITE.email}`
 export const PHONE_HREF = `tel:${SITE.phone.replace(/[^\d+]/g, '')}`

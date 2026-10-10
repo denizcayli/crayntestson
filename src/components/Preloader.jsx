@@ -51,22 +51,10 @@ export function replayIntroOnNextLoad() {
 const show = firstVisit()
 const startedAt = performance.now()
 
-// Under WordPress the page arrives with the intro's screen and labels already in it (the theme's
-// index.php), so a visitor sees them before this code has loaded. Those labels stay where they
-// are, above what is drawn here; only the screen behind them is handed over.
-const shell = document.getElementById('crayn-acilis')
-if (!show) shell?.remove()
-
 // Settles when the intro has finished (at once if it is not shown), for work that can wait for it.
 let resolveIntro
 export const introFinished = new Promise((resolve) => { resolveIntro = resolve })
 if (!show) resolveIntro()
-
-// Settles when the screen starts to open (at once if the intro is not shown), for work that
-// would be wasted while the page is still covered.
-let resolveOpening
-export const introOpening = new Promise((resolve) => { resolveOpening = resolve })
-if (!show) resolveOpening()
 
 // Seconds left until the page is mostly uncovered, so page entrances can wait for it.
 export function preloaderRemaining() {
@@ -89,7 +77,6 @@ export default function Preloader() {
   // is centred on it. Both follow the logo's position if the window is resized.
   useLayoutEffect(() => {
     if (!show) return
-    shell?.querySelector('.preloader-screen')?.remove()
     const place = () => {
       // Once the intro has gone there is nothing left to place.
       if (!slotRef.current) return
@@ -99,7 +86,6 @@ export default function Preloader() {
       const outline = OUTLINE.map(([x, y]) => `${(centreX + x * box.width).toFixed(1)}px ${(centreY + y * box.width).toFixed(1)}px`)
       screenRef.current.style.clipPath = `polygon(evenodd, 0 0, 100% 0, 100% 100%, 0 100%, 0 0, ${outline.join(', ')}, ${outline[0]})`
       rootRef.current.style.transformOrigin = `${centreX}px ${centreY}px`
-      if (shell) shell.style.transformOrigin = rootRef.current.style.transformOrigin
     }
     place()
     window.addEventListener('resize', place)
@@ -111,21 +97,17 @@ export default function Preloader() {
   useEffect(() => {
     if (!show) return
     const root = rootRef.current
-    // The labels that came with the page move with the rest.
-    const layers = shell ? [root, shell] : [root]
     const running = []
     const finish = () => {
       resolveIntro()
-      shell?.remove()
       setDone(true)
     }
 
     const open = () => {
-      resolveOpening()
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const fades = layers.map((layer) => layer.animate({ opacity: [1, 0] }, { duration: 400, fill: 'forwards' }))
-        running.push(...fades)
-        fades[0].finished.then(finish, () => {})
+        const fade = root.animate({ opacity: [1, 0] }, { duration: 400, fill: 'forwards' })
+        running.push(fade)
+        fade.finished.then(finish, () => {})
         return
       }
       const box = slotRef.current.getBoundingClientRect()
@@ -143,10 +125,10 @@ export default function Preloader() {
         const eased = t < 0.5 ? 2 * t * t : 1 - 2 * (1 - t) ** 2
         return { transform: `scale(${(growth ** eased).toFixed(4)})` }
       })
-      const zooms = layers.map((layer) => layer.animate(frames, { duration: OPEN_DURATION * 1000, easing: 'linear', fill: 'forwards' }))
+      const zoom = root.animate(frames, { duration: OPEN_DURATION * 1000, easing: 'linear', fill: 'forwards' })
       const unplug = root.querySelector('.preloader-plug').animate({ opacity: [1, 0] }, { duration: 350, fill: 'forwards' })
-      running.push(...zooms, unplug)
-      zooms[0].finished.then(finish, () => {})
+      running.push(zoom, unplug)
+      zoom.finished.then(finish, () => {})
     }
 
     const timer = setTimeout(open, OPEN_AT * 1000)
@@ -158,13 +140,10 @@ export default function Preloader() {
 
   if (done) return null
 
-  // With the page's own labels on top, the ones here only hold the logo in its place.
-  const label = `preloader-label ${shell ? 'invisible' : ''}`
-
   return (
     <div ref={rootRef} className="preloader" role="status" aria-label="Yükleniyor">
       <div ref={screenRef} className="preloader-screen" />
-      <div className={`${label} preloader-label--left`}>©2026</div>
+      <div className="preloader-label preloader-label--left">©2026</div>
       <div ref={slotRef} className="preloader-slot">
         <div className="preloader-plug" style={{ clipPath: PLUG_SHAPE }} />
         <div className="preloader-logo">
@@ -173,7 +152,7 @@ export default function Preloader() {
           </div>
         </div>
       </div>
-      <div className={`${label} preloader-label--right`}>CraynAI</div>
+      <div className="preloader-label preloader-label--right">CraynAI</div>
     </div>
   )
 }
